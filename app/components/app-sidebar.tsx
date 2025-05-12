@@ -24,8 +24,8 @@ import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } fr
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "uigm.user",
+    email: "uigm.user@csgb.gov.tr",
     avatar: "/avatars/shadcn.jpg",
   },
   teams: [
@@ -45,7 +45,7 @@ const data = {
       items: [
         {
           title: "Uzman İş Listesi",
-          url: "#",
+          url: "/dashboard/uzmanislistesi",
         },
         {
           title: "Onaylanmayan İşlemler",
@@ -57,6 +57,10 @@ const data = {
         },
         {
           title: "Dış Kurum Görüş Takip",
+          url: "#",
+        },
+        {
+          title: "Müdür Onayında Bekleyenler",
           url: "#",
         },
       ],
@@ -71,11 +75,11 @@ const data = {
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Güncelleme Onay Bekleyen",
           url: "#",
         },
         {
-          title: "Quantum",
+          title: "Başkanda Onaayında Bekleyenler",
           url: "#",
         },
       ],
@@ -86,44 +90,33 @@ const data = {
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "İş Listesi",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "E-İmza Listesi",
           url: "#",
         },
         {
-          title: "Tutorials",
+          title: "Onaylanmayan işlemler",
           url: "#",
         },
         {
-          title: "Changelog",
+          title: "Makam Onayında Bekleyenler",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Ayarlar",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Manuel Başvuru Ekle",
           url: "#",
         },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
+        
       ],
     },
   ],
