@@ -1,8 +1,12 @@
+import RadioCardsUzman from '@/app/components/radio-cards-uzman'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>Uzman iş listesi</div>
+    <>
+    
+    <RadioCardsUzman />
+    </>
   )
 }
 

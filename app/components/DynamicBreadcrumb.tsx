@@ -23,7 +23,7 @@ export default function DynamicBreadcrumb() {
     <Breadcrumb>
       <BreadcrumbList>
         {pathLinks.map((item, index) => (
-          <BreadcrumbItem key={item.href}>
+          <BreadcrumbItem key={item.href} >
             <BreadcrumbLink asChild>
               <Link href={item.href}>
                 {item.name}

@@ -1,0 +1,170 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./eizindemo.db"
+}
+
+enum ApplicationStatus {
+  DEGERLENDIRME_ASAMASINDA
+  ONAYLANDI
+  RED_EDILDI
+  DIS_KURUM_GORUSU_BEKLENIYOR
+  GUNCELLEME_BEKLENIYOR
+  IPTAL_EDILDI
+  SONLANDIRILDI
+  GECERLILIGI_SONA_ERDI
+}
+
+enum Role {
+  DIS_KULLANICI
+  UZMAN
+  SUBE_MUDURU
+  DAIRE_BASKANI
+  GENEL_MUDUR
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  role      Role
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  applications         Application[]         @relation("Applicant")
+  applicationHistories ApplicationHistory[]
+  workflows            ApplicationWorkflow[]
+}
+
+model Application {
+  id                Int               @id @default(autoincrement())
+  applicationNumber String            @unique
+  applicantId       Int
+  applicant         User              @relation("Applicant", fields: [applicantId], references: [id])
+  status            ApplicationStatus @default(DEGERLENDIRME_ASAMASINDA)
+
+  // Tarih ve temel bilgiler
+  applicationDate DateTime
+  applicationType String
+  izinStartDate   DateTime?
+  izinEndDate     DateTime?
+
+  // Kişisel bilgiler
+  ytbScholarshipStatus    String?
+  foreignReferenceNumber  String?
+  foreignIdentityNumber   String
+  firstName               String
+  lastName                String
+  fatherName              String?
+  motherName              String?
+  gender                  String?
+  placeOfBirth            String?
+  dateOfBirth             DateTime?
+  maritalStatus           String?
+  nationality             String?
+  passportType            String?
+  passportNumber          String?
+  passportExpiryDate      DateTime?
+  passportRemainingPeriod String?
+  residenceAddress        String?
+  email                   String
+  phoneNumber             String
+  motherLanguage          String?
+  turkishLevel            String?
+  knownLanguages          String?
+  educationLevel          String?
+  specializationField     String?
+  graduatedSchoolName     String?
+  diplomaProfession       String?
+  jobTitle                String?
+  jobDescription          String?
+  employmentReason        String?
+  employmentType          String?
+  employmentDuration      String?
+  permitType              String?
+  grossSalary             String?
+  isCompanyPartner        Boolean
+  isPremiumAbroad         Boolean?
+  isHomeServiceJob        Boolean?
+  isTechRequired          Boolean?
+  isTubitakEmployee       Boolean?
+
+  // İlişkiler
+  documents    ApplicationDocuments?
+  employerInfo EmployerInfo?
+  histories    ApplicationHistory[]
+  workflow     ApplicationWorkflow?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ApplicationDocuments {
+  id            Int         @id @default(autoincrement())
+  applicationId Int         @unique
+  application   Application @relation(fields: [applicationId], references: [id])
+
+  applicationPetition       String?
+  passport                  String?
+  employmentContract        String?
+  diploma                   String?
+  additionalDocument        String?
+  employmentNotification    String?
+  permitTerminationPetition String?
+  activityCertificate       String?
+  tradeRegistryGazette      String?
+  balanceSheet              String?
+  tourismLicense            String?
+}
+
+model EmployerInfo {
+  id            Int         @id @default(autoincrement())
+  applicationId Int         @unique
+  application   Application @relation(fields: [applicationId], references: [id])
+
+  registrationNumber   String?
+  companyType          String?
+  naceCode             String?
+  workplaceTitle       String?
+  phoneNumber          String?
+  ebildirgeName        String?
+  responsibleName      String?
+  currentEmail         String?
+  applicationEmail     String?
+  establishmentDate    DateTime?
+  mersisNumber         String?
+  taxOffice            String?
+  taxNumber            String?
+  workplaceAddress     String?
+  workAddress          String?
+  capitalStructure     String?
+  registeredCapitalTRY String?
+  paidCapitalTRY       String?
+}
+
+model ApplicationHistory {
+  id            Int         @id @default(autoincrement())
+  applicationId Int
+  application   Application @relation(fields: [applicationId], references: [id])
+  userId        Int
+  user          User        @relation(fields: [userId], references: [id])
+  action        String
+  comment       String?
+  createdAt     DateTime    @default(now())
+}
+
+model ApplicationWorkflow {
+  id            Int         @id @default(autoincrement())
+  applicationId Int         @unique
+  application   Application @relation(fields: [applicationId], references: [id])
+  currentUserId Int
+  currentUser   User        @relation(fields: [currentUserId], references: [id])
+  assignedAt    DateTime    @default(now())
+}
