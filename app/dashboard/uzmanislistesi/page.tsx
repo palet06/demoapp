@@ -1,11 +1,21 @@
 import RadioCardsUzman from '@/app/components/radio-cards-uzman'
-import React from 'react'
 
-const page = () => {
+
+
+
+
+
+
+
+
+
+const page = async () => {
+  
   return (
     <>
     
     <RadioCardsUzman />
+    
     </>
   )
 }

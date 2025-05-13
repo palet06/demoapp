@@ -9,6 +9,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { cn } from "@/lib/utils"
 import {   CheckCircle, FolderSync, PackagePlus, SatelliteDish, Undo2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import UzmanTable from "./UzmanTable"
+
 
 type Option = {
   id: string
@@ -53,7 +55,7 @@ export default function RadioCardsUzman() {
   ]
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col gap-5">
       <h2 className="text-lg font-bold mb-3 text-center">Uzman İş Listesi</h2>
       <RadioGroup value={selected} onValueChange={setSelected} className="grid grid-cols-1 md:grid-cols-4 gap-3 w-full">
         {options.map((option) => (
@@ -85,10 +87,10 @@ export default function RadioCardsUzman() {
           </div>
         ))}
       </RadioGroup>
-      <p className="mt-6 text-center text-muted-foreground">
-        Selected plan:{" "}
-        <span className="font-medium text-foreground">{options.find((o) => o.id === selected)?.title}</span>
-      </p>
+      {
+        selected==="option1"&&<UzmanTable />
+      }
+      
     </div>
   )
 }
