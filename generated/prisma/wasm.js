@@ -131,6 +131,7 @@ exports.Prisma.ApplicationScalarFieldEnum = {
   applicationNumber: 'applicationNumber',
   applicantId: 'applicantId',
   status: 'status',
+  applicantPhoto: 'applicantPhoto',
   applicationDate: 'applicationDate',
   applicationType: 'applicationType',
   izinStartDate: 'izinStartDate',

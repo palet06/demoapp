@@ -49,6 +49,7 @@ model Application {
   applicantId       Int
   applicant         User              @relation("Applicant", fields: [applicantId], references: [id])
   status            ApplicationStatus @default(DEGERLENDIRME_ASAMASINDA)
+  applicantPhoto    String?
 
   // Tarih ve temel bilgiler
   applicationDate DateTime

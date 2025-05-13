@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 import {   CheckCircle, FolderSync, PackagePlus, SatelliteDish, Undo2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import UzmanTable from "./UzmanTable"
+import { Application } from "@/generated/prisma"
 
 
 type Option = {
@@ -20,7 +21,9 @@ type Option = {
   taskCount: number
 }
 
-export default function RadioCardsUzman() {
+
+
+export default function RadioCardsUzman({uzmanislistesi}:{uzmanislistesi:Application[]}) {
   const [selected, setSelected] = useState<string>("option1")
 
   const options: Option[] = [
@@ -29,7 +32,7 @@ export default function RadioCardsUzman() {
       title: "İlk İşlem Bekleyen",
       description: "Yeni tamamlanan ve ilk işlem bekleyen başvurular.",
       icon: <PackagePlus className="h-10 w-10 text-blue-500" />,
-      taskCount: 5,
+      taskCount: uzmanislistesi.length,
     },
     {
       id: "option2",
@@ -87,9 +90,12 @@ export default function RadioCardsUzman() {
           </div>
         ))}
       </RadioGroup>
-      {
-        selected==="option1"&&<UzmanTable />
+      
+ {
+        selected==="option1"&&<UzmanTable uzmanislistesi={uzmanislistesi} />
       }
+      
+     
       
     </div>
   )

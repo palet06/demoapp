@@ -2639,6 +2639,7 @@ export namespace Prisma {
     applicationNumber: string | null
     applicantId: number | null
     status: $Enums.ApplicationStatus | null
+    applicantPhoto: string | null
     applicationDate: Date | null
     applicationType: string | null
     izinStartDate: Date | null
@@ -2690,6 +2691,7 @@ export namespace Prisma {
     applicationNumber: string | null
     applicantId: number | null
     status: $Enums.ApplicationStatus | null
+    applicantPhoto: string | null
     applicationDate: Date | null
     applicationType: string | null
     izinStartDate: Date | null
@@ -2741,6 +2743,7 @@ export namespace Prisma {
     applicationNumber: number
     applicantId: number
     status: number
+    applicantPhoto: number
     applicationDate: number
     applicationType: number
     izinStartDate: number
@@ -2804,6 +2807,7 @@ export namespace Prisma {
     applicationNumber?: true
     applicantId?: true
     status?: true
+    applicantPhoto?: true
     applicationDate?: true
     applicationType?: true
     izinStartDate?: true
@@ -2855,6 +2859,7 @@ export namespace Prisma {
     applicationNumber?: true
     applicantId?: true
     status?: true
+    applicantPhoto?: true
     applicationDate?: true
     applicationType?: true
     izinStartDate?: true
@@ -2906,6 +2911,7 @@ export namespace Prisma {
     applicationNumber?: true
     applicantId?: true
     status?: true
+    applicantPhoto?: true
     applicationDate?: true
     applicationType?: true
     izinStartDate?: true
@@ -3044,6 +3050,7 @@ export namespace Prisma {
     applicationNumber: string
     applicantId: number
     status: $Enums.ApplicationStatus
+    applicantPhoto: string | null
     applicationDate: Date
     applicationType: string
     izinStartDate: Date | null
@@ -3114,6 +3121,7 @@ export namespace Prisma {
     applicationNumber?: boolean
     applicantId?: boolean
     status?: boolean
+    applicantPhoto?: boolean
     applicationDate?: boolean
     applicationType?: boolean
     izinStartDate?: boolean
@@ -3171,6 +3179,7 @@ export namespace Prisma {
     applicationNumber?: boolean
     applicantId?: boolean
     status?: boolean
+    applicantPhoto?: boolean
     applicationDate?: boolean
     applicationType?: boolean
     izinStartDate?: boolean
@@ -3223,6 +3232,7 @@ export namespace Prisma {
     applicationNumber?: boolean
     applicantId?: boolean
     status?: boolean
+    applicantPhoto?: boolean
     applicationDate?: boolean
     applicationType?: boolean
     izinStartDate?: boolean
@@ -3275,6 +3285,7 @@ export namespace Prisma {
     applicationNumber?: boolean
     applicantId?: boolean
     status?: boolean
+    applicantPhoto?: boolean
     applicationDate?: boolean
     applicationType?: boolean
     izinStartDate?: boolean
@@ -3321,7 +3332,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type ApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "applicationNumber" | "applicantId" | "status" | "applicationDate" | "applicationType" | "izinStartDate" | "izinEndDate" | "ytbScholarshipStatus" | "foreignReferenceNumber" | "foreignIdentityNumber" | "firstName" | "lastName" | "fatherName" | "motherName" | "gender" | "placeOfBirth" | "dateOfBirth" | "maritalStatus" | "nationality" | "passportType" | "passportNumber" | "passportExpiryDate" | "passportRemainingPeriod" | "residenceAddress" | "email" | "phoneNumber" | "motherLanguage" | "turkishLevel" | "knownLanguages" | "educationLevel" | "specializationField" | "graduatedSchoolName" | "diplomaProfession" | "jobTitle" | "jobDescription" | "employmentReason" | "employmentType" | "employmentDuration" | "permitType" | "grossSalary" | "isCompanyPartner" | "isPremiumAbroad" | "isHomeServiceJob" | "isTechRequired" | "isTubitakEmployee" | "createdAt" | "updatedAt", ExtArgs["result"]["application"]>
+  export type ApplicationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "applicationNumber" | "applicantId" | "status" | "applicantPhoto" | "applicationDate" | "applicationType" | "izinStartDate" | "izinEndDate" | "ytbScholarshipStatus" | "foreignReferenceNumber" | "foreignIdentityNumber" | "firstName" | "lastName" | "fatherName" | "motherName" | "gender" | "placeOfBirth" | "dateOfBirth" | "maritalStatus" | "nationality" | "passportType" | "passportNumber" | "passportExpiryDate" | "passportRemainingPeriod" | "residenceAddress" | "email" | "phoneNumber" | "motherLanguage" | "turkishLevel" | "knownLanguages" | "educationLevel" | "specializationField" | "graduatedSchoolName" | "diplomaProfession" | "jobTitle" | "jobDescription" | "employmentReason" | "employmentType" | "employmentDuration" | "permitType" | "grossSalary" | "isCompanyPartner" | "isPremiumAbroad" | "isHomeServiceJob" | "isTechRequired" | "isTubitakEmployee" | "createdAt" | "updatedAt", ExtArgs["result"]["application"]>
   export type ApplicationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     applicant?: boolean | UserDefaultArgs<ExtArgs>
     documents?: boolean | Application$documentsArgs<ExtArgs>
@@ -3351,6 +3362,7 @@ export namespace Prisma {
       applicationNumber: string
       applicantId: number
       status: $Enums.ApplicationStatus
+      applicantPhoto: string | null
       applicationDate: Date
       applicationType: string
       izinStartDate: Date | null
@@ -3827,6 +3839,7 @@ export namespace Prisma {
     readonly applicationNumber: FieldRef<"Application", 'String'>
     readonly applicantId: FieldRef<"Application", 'Int'>
     readonly status: FieldRef<"Application", 'ApplicationStatus'>
+    readonly applicantPhoto: FieldRef<"Application", 'String'>
     readonly applicationDate: FieldRef<"Application", 'DateTime'>
     readonly applicationType: FieldRef<"Application", 'String'>
     readonly izinStartDate: FieldRef<"Application", 'DateTime'>
@@ -9091,6 +9104,7 @@ export namespace Prisma {
     applicationNumber: 'applicationNumber',
     applicantId: 'applicantId',
     status: 'status',
+    applicantPhoto: 'applicantPhoto',
     applicationDate: 'applicationDate',
     applicationType: 'applicationType',
     izinStartDate: 'izinStartDate',
@@ -9356,6 +9370,7 @@ export namespace Prisma {
     applicationNumber?: StringFilter<"Application"> | string
     applicantId?: IntFilter<"Application"> | number
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
+    applicantPhoto?: StringNullableFilter<"Application"> | string | null
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     applicationType?: StringFilter<"Application"> | string
     izinStartDate?: DateTimeNullableFilter<"Application"> | Date | string | null
@@ -9412,6 +9427,7 @@ export namespace Prisma {
     applicationNumber?: SortOrder
     applicantId?: SortOrder
     status?: SortOrder
+    applicantPhoto?: SortOrderInput | SortOrder
     applicationDate?: SortOrder
     applicationType?: SortOrder
     izinStartDate?: SortOrderInput | SortOrder
@@ -9471,6 +9487,7 @@ export namespace Prisma {
     NOT?: ApplicationWhereInput | ApplicationWhereInput[]
     applicantId?: IntFilter<"Application"> | number
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
+    applicantPhoto?: StringNullableFilter<"Application"> | string | null
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     applicationType?: StringFilter<"Application"> | string
     izinStartDate?: DateTimeNullableFilter<"Application"> | Date | string | null
@@ -9527,6 +9544,7 @@ export namespace Prisma {
     applicationNumber?: SortOrder
     applicantId?: SortOrder
     status?: SortOrder
+    applicantPhoto?: SortOrderInput | SortOrder
     applicationDate?: SortOrder
     applicationType?: SortOrder
     izinStartDate?: SortOrderInput | SortOrder
@@ -9586,6 +9604,7 @@ export namespace Prisma {
     applicationNumber?: StringWithAggregatesFilter<"Application"> | string
     applicantId?: IntWithAggregatesFilter<"Application"> | number
     status?: EnumApplicationStatusWithAggregatesFilter<"Application"> | $Enums.ApplicationStatus
+    applicantPhoto?: StringNullableWithAggregatesFilter<"Application"> | string | null
     applicationDate?: DateTimeWithAggregatesFilter<"Application"> | Date | string
     applicationType?: StringWithAggregatesFilter<"Application"> | string
     izinStartDate?: DateTimeNullableWithAggregatesFilter<"Application"> | Date | string | null
@@ -10056,6 +10075,7 @@ export namespace Prisma {
   export type ApplicationCreateInput = {
     applicationNumber: string
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -10112,6 +10132,7 @@ export namespace Prisma {
     applicationNumber: string
     applicantId: number
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -10165,6 +10186,7 @@ export namespace Prisma {
   export type ApplicationUpdateInput = {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -10221,6 +10243,7 @@ export namespace Prisma {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     applicantId?: IntFieldUpdateOperationsInput | number
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -10276,6 +10299,7 @@ export namespace Prisma {
     applicationNumber: string
     applicantId: number
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -10325,6 +10349,7 @@ export namespace Prisma {
   export type ApplicationUpdateManyMutationInput = {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -10376,6 +10401,7 @@ export namespace Prisma {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     applicantId?: IntFieldUpdateOperationsInput | number
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -10961,17 +10987,6 @@ export namespace Prisma {
     not?: NestedEnumApplicationStatusFilter<$PrismaModel> | $Enums.ApplicationStatus
   }
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -10984,6 +10999,17 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type BoolFilter<$PrismaModel = never> = {
@@ -11026,6 +11052,7 @@ export namespace Prisma {
     applicationNumber?: SortOrder
     applicantId?: SortOrder
     status?: SortOrder
+    applicantPhoto?: SortOrder
     applicationDate?: SortOrder
     applicationType?: SortOrder
     izinStartDate?: SortOrder
@@ -11082,6 +11109,7 @@ export namespace Prisma {
     applicationNumber?: SortOrder
     applicantId?: SortOrder
     status?: SortOrder
+    applicantPhoto?: SortOrder
     applicationDate?: SortOrder
     applicationType?: SortOrder
     izinStartDate?: SortOrder
@@ -11133,6 +11161,7 @@ export namespace Prisma {
     applicationNumber?: SortOrder
     applicantId?: SortOrder
     status?: SortOrder
+    applicantPhoto?: SortOrder
     applicationDate?: SortOrder
     applicationType?: SortOrder
     izinStartDate?: SortOrder
@@ -11194,20 +11223,6 @@ export namespace Prisma {
     _max?: NestedEnumApplicationStatusFilter<$PrismaModel>
   }
 
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -11223,6 +11238,20 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -11661,12 +11690,12 @@ export namespace Prisma {
     set?: $Enums.ApplicationStatus
   }
 
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
-  }
-
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
   }
 
   export type BoolFieldUpdateOperationsInput = {
@@ -11975,17 +12004,6 @@ export namespace Prisma {
     not?: NestedEnumApplicationStatusFilter<$PrismaModel> | $Enums.ApplicationStatus
   }
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -11998,6 +12016,17 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
   export type NestedBoolFilter<$PrismaModel = never> = {
@@ -12020,31 +12049,6 @@ export namespace Prisma {
     _max?: NestedEnumApplicationStatusFilter<$PrismaModel>
   }
 
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | null
-    notIn?: Date[] | string[] | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | null
-    notIn?: number[] | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -12060,6 +12064,31 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -12081,6 +12110,7 @@ export namespace Prisma {
   export type ApplicationCreateWithoutApplicantInput = {
     applicationNumber: string
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -12135,6 +12165,7 @@ export namespace Prisma {
     id?: number
     applicationNumber: string
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -12262,6 +12293,7 @@ export namespace Prisma {
     applicationNumber?: StringFilter<"Application"> | string
     applicantId?: IntFilter<"Application"> | number
     status?: EnumApplicationStatusFilter<"Application"> | $Enums.ApplicationStatus
+    applicantPhoto?: StringNullableFilter<"Application"> | string | null
     applicationDate?: DateTimeFilter<"Application"> | Date | string
     applicationType?: StringFilter<"Application"> | string
     izinStartDate?: DateTimeNullableFilter<"Application"> | Date | string | null
@@ -12677,6 +12709,7 @@ export namespace Prisma {
   export type ApplicationCreateWithoutDocumentsInput = {
     applicationNumber: string
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -12732,6 +12765,7 @@ export namespace Prisma {
     applicationNumber: string
     applicantId: number
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -12800,6 +12834,7 @@ export namespace Prisma {
   export type ApplicationUpdateWithoutDocumentsInput = {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -12855,6 +12890,7 @@ export namespace Prisma {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     applicantId?: IntFieldUpdateOperationsInput | number
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -12907,6 +12943,7 @@ export namespace Prisma {
   export type ApplicationCreateWithoutEmployerInfoInput = {
     applicationNumber: string
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -12962,6 +12999,7 @@ export namespace Prisma {
     applicationNumber: string
     applicantId: number
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -13030,6 +13068,7 @@ export namespace Prisma {
   export type ApplicationUpdateWithoutEmployerInfoInput = {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -13085,6 +13124,7 @@ export namespace Prisma {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     applicantId?: IntFieldUpdateOperationsInput | number
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -13137,6 +13177,7 @@ export namespace Prisma {
   export type ApplicationCreateWithoutHistoriesInput = {
     applicationNumber: string
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -13192,6 +13233,7 @@ export namespace Prisma {
     applicationNumber: string
     applicantId: number
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -13286,6 +13328,7 @@ export namespace Prisma {
   export type ApplicationUpdateWithoutHistoriesInput = {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -13341,6 +13384,7 @@ export namespace Prisma {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     applicantId?: IntFieldUpdateOperationsInput | number
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -13425,6 +13469,7 @@ export namespace Prisma {
   export type ApplicationCreateWithoutWorkflowInput = {
     applicationNumber: string
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -13480,6 +13525,7 @@ export namespace Prisma {
     applicationNumber: string
     applicantId: number
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -13574,6 +13620,7 @@ export namespace Prisma {
   export type ApplicationUpdateWithoutWorkflowInput = {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -13629,6 +13676,7 @@ export namespace Prisma {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     applicantId?: IntFieldUpdateOperationsInput | number
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -13714,6 +13762,7 @@ export namespace Prisma {
     id?: number
     applicationNumber: string
     status?: $Enums.ApplicationStatus
+    applicantPhoto?: string | null
     applicationDate: Date | string
     applicationType: string
     izinStartDate?: Date | string | null
@@ -13777,6 +13826,7 @@ export namespace Prisma {
   export type ApplicationUpdateWithoutApplicantInput = {
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -13831,6 +13881,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -13885,6 +13936,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     applicationNumber?: StringFieldUpdateOperationsInput | string
     status?: EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+    applicantPhoto?: NullableStringFieldUpdateOperationsInput | string | null
     applicationDate?: DateTimeFieldUpdateOperationsInput | Date | string
     applicationType?: StringFieldUpdateOperationsInput | string
     izinStartDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
