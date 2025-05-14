@@ -58,9 +58,9 @@ export default function RadioCardsUzman({uzmanislistesi}:{uzmanislistesi:Applica
   ]
 
   return (
-    <div className="w-full flex flex-col gap-5">
+    <div className="w-full flex flex-col gap-5 ">
       <h2 className="text-lg font-bold mb-3 text-center">Uzman İş Listesi</h2>
-      <RadioGroup value={selected} onValueChange={setSelected} className="grid grid-cols-1 md:grid-cols-4 gap-3 w-full">
+      <RadioGroup value={selected} onValueChange={setSelected} className="grid grid-cols-1 md:grid-cols-4 gap-3 w-full ">
         {options.map((option) => (
           <div key={option.id} className="relative ">
             <RadioGroupItem value={option.id} id={option.id} className="sr-only" />

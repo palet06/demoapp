@@ -23,7 +23,7 @@ import Link from "next/link";
 
 const UzmanTable = ({ uzmanislistesi }: { uzmanislistesi: Application[] }) => {
   return (
-    <Card className="mb-6 ">
+    <Card className="mb-6">
       {/* <CardHeader className="p-4 pb-0">
           <CardTitle className="text-base font-medium">Recent Invoices</CardTitle>
         </CardHeader> */}
@@ -36,6 +36,7 @@ const UzmanTable = ({ uzmanislistesi }: { uzmanislistesi: Application[] }) => {
                 <TableHead>Adı</TableHead>
                 <TableHead>Soyadı</TableHead>
                 <TableHead>YKN</TableHead>
+                <TableHead>Başvuru Tarihi</TableHead>
                 <TableHead>Durum</TableHead>
                 <TableHead>Başvuru Türü</TableHead>
                 <TableHead className="text-right">İşlem</TableHead>
@@ -47,6 +48,7 @@ const UzmanTable = ({ uzmanislistesi }: { uzmanislistesi: Application[] }) => {
                   <TableCell className="font-medium bg">
                     <Link
                       href={`/dashboard/degerlendirme/${basvuru.applicationNumber}`}
+                      className="text-blue-600 hover:text-blue-600/65"
                     >
                       {basvuru.applicationNumber}
                     </Link>
@@ -54,6 +56,7 @@ const UzmanTable = ({ uzmanislistesi }: { uzmanislistesi: Application[] }) => {
                   <TableCell>{basvuru.firstName}</TableCell>
                   <TableCell>{basvuru.lastName}</TableCell>
                   <TableCell>{basvuru.foreignIdentityNumber}</TableCell>
+                  <TableCell>{basvuru.applicationDate?.toLocaleDateString()}</TableCell>
                   <TableCell>
                     <Badge
                       variant={
