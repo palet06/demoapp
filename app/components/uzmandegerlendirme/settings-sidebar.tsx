@@ -14,41 +14,46 @@ type MenuItem = {
 
 const menuItems: MenuItem[] = [
   {
-    title: "Basic Settings",
-    href: "#section-basic-settings",
+    title: "Başvuru Bilgileri",
+    href: "#section-basvuru-bilgi",
     active: true,
-    items: [
-      { title: "Authentication", href: "#authentication" },
-      { title: "Email", href: "#email" },
-      { title: "Password", href: "#password" },
-      { title: "Social Sign In", href: "#social-sign-in" },
-      { title: "Single Sign-On(SSO)", href: "#sso" },
-      { title: "Two-Factor Auth(2FA)", href: "#2fa" },
-    ],
+    
   },
   {
-    title: "Advanced Settings",
-    href: "#advanced-settings",
-    items: [
-      { title: "Preferences", href: "#preferences" },
-      { title: "Appearance", href: "#appearance" },
-      { title: "Notifications", href: "#notifications" },
-      { title: "Address", href: "#section-address" },
-    ],
+    title: "Kişi Bilgileri",
+    href: "#section-personel",
+    
   },
   {
-    title: "External Services",
+    title: "İletişim Bilgileri",
+    href: "#section-iletisim-bilgileri",
+    
+  },
+  
+  {
+    title: "Pasaport Bilgileri",
+    href: "#section-address-form",
+   
+  },
+  {
+    title: "Eğitim Bilgileri",
     href: "#external-services",
-    items: [
-      { title: "Manage API", href: "#manage-api" },
-      { title: "Integrations", href: "#integrations" },
-      { title: "Delete Account", href: "#section-delete-account" },
-    ],
+   
+  },
+  {
+    title: "İşveren Bilgileri",
+    href: "#external-services",
+   
+  },
+  {
+    title: "Ek Bilgi ve Belgeler",
+    href: "#external-services",
+   
   },
 ]
 
 export function SettingsSidebar() {
-  const [activeSection, setActiveSection] = useState<string>("basic-settings")
+  const [activeSection, setActiveSection] = useState<string>("basvuru-bilgi")
 
   useEffect(() => {
     const sections = document.querySelectorAll('[id^="section-"]')
@@ -62,7 +67,7 @@ export function SettingsSidebar() {
           }
         })
       },
-      { threshold: 0.3 },
+      { threshold: 1 },
     )
 
     sections.forEach((section) => {

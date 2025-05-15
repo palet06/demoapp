@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Check, MoreHorizontal } from "lucide-react"
+import {  MoreHorizontal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -38,15 +38,15 @@ export function PersonalInfoCard() {
       { key: "birthPlace", label: "Doğum Yeri", value: "Azerbaycan", verified: true },
       { key: "nationality", label: "Uyruk", value: "ffff", verified: true },
     ],
-    [{ key: "birthDate", label: "Doğum Tarihi", value: "26-04-1985 ( 40 yıl 10 gün önce )", verified: true, span: 2 }],
-    [{ key: "foreignId", label: "Yabancı Kimlik Numarası", value: "", span: 2 }],
-    [{ key: "foreignRef", label: "Yurt Dışı Referans Numarası", value: "", span: 2 }],
+    [{ key: "birthDate", label: "Doğum Tarihi", value: "26-04-1985 ( 40 yıl 10 gün önce )", verified: true, span:4 }],
+    [{ key: "foreignId", label: "Yabancı Kimlik Numarası", value: "", span: 4 }],
+    [{ key: "foreignRef", label: "Yurt Dışı Referans Numarası", value: "", span: 4 }],
   ]
 
   return (
-    <Card className="w-full max-w-3xl">
+    <Card >
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle>Kişisel Bilgiler</CardTitle>
+        <CardTitle>Kişi Bilgileri</CardTitle>
         <div className="flex items-center gap-2">
           <Select value={documentType} onValueChange={setDocumentType}>
             <SelectTrigger className="w-[180px]">
@@ -80,7 +80,7 @@ export function PersonalInfoCard() {
           <div className="flex-shrink-0">
             <div className="w-32 h-40 bg-muted rounded-md overflow-hidden">
               <Image
-                src="/placeholder.svg?height=160&width=128"
+                src="/3547896.png"
                 alt="Kişi fotoğrafı"
                 width={128}
                 height={160}
@@ -95,16 +95,16 @@ export function PersonalInfoCard() {
                   <TableRow key={rowIndex}>
                     {row.map((field) => (
                       <>
-                        <TableCell className="font-medium py-2 px-3 border" key={`${field.key}-label`}>
-                          <div className="flex items-center gap-2">
+                        <TableCell className="font-medium py-2 px-3 border bg-secondary " key={`${field.key}-label`}>
+                          <div className="flex items-center gap-2 ">
                             {field.label}
-                            {field.verified && <Check className="h-4 w-4 text-green-500" />}
+                           
                           </div>
                         </TableCell>
-                        <TableCell
-                          className="py-2 px-3 border"
+                        <TableCell 
+                          className="py-2 px-3 border whitespace-normal"
                           key={`${field.key}-value`}
-                          colSpan={field.span === 2 ? 3 : undefined}
+                         
                         >
                           {field.value}
                         </TableCell>
