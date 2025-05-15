@@ -1,3 +1,4 @@
+import UzmanBasvuruDegerlendirme from '@/app/components/uzmandegerlendirme/UzmanBasvuruDegerlendirme'
 import React from 'react'
 
 const page = async ({
@@ -8,7 +9,11 @@ const page = async ({
 
     const { basvuruNo } = await params
   return (
-    <div>{basvuruNo}</div>
+    <>
+    
+    <UzmanBasvuruDegerlendirme />
+    </>
+
   )
 }
 
