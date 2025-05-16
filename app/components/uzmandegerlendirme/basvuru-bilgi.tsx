@@ -1,17 +1,11 @@
-"use client"
+"use client";
 
-
-
-
-
-
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 const BasvuruBilgi = () => {
-     
   return (
-      <Card >
+    <Card >
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Başvuru Bilgileri</CardTitle>
            
@@ -25,7 +19,7 @@ const BasvuruBilgi = () => {
                    
                       <TableRow >
                         
-                            <TableCell className="font-medium py-2 px-3 border bg-secondary w-1/3"> 
+                            <TableCell className="font-medium py-2 px-3 border bg-secondary w-1/4"> 
                               <div className="flex items-center gap-2 ">
                               Başvuru Numarası
                                
@@ -33,41 +27,13 @@ const BasvuruBilgi = () => {
                             </TableCell>
                             
                             <TableCell
-                              className="py-2 px-3 border whitespace-normal w-2/3"
+                              className="py-2 px-3 border whitespace-normal w-1/4"
                              
                              
                             >
                               3547896
                             </TableCell>
-                            
-                            
-                         
-                      
-                      </TableRow>
-                      <TableRow >
-                        
-                            <TableCell className="font-medium py-2 px-3 border bg-secondary "> 
-                              <div className="flex items-center gap-2 ">
-                              Başvuru Tarihi
-                               
-                              </div>
-                            </TableCell>
-                            
-                            <TableCell
-                              className="py-2 px-3 border whitespace-normal"
-                             
-                             
-                            >
-                              12.04.2024
-                            </TableCell>
-                           
-                            
-                         
-                      
-                      </TableRow>
-                      <TableRow >
-                        
-                            <TableCell className="font-medium py-2 px-3 border bg-secondary "> 
+                            <TableCell className="font-medium py-2 px-3 border bg-secondary w-1/4"> 
                               <div className="flex items-center gap-2 ">
                               Başvuru Türü
                                
@@ -75,25 +41,128 @@ const BasvuruBilgi = () => {
                             </TableCell>
                             
                             <TableCell
-                              className="py-2 px-3 border whitespace-normal"
+                              className="py-2 px-3 border whitespace-normal w-1/4"
                              
                              
                             >
                               Yurt Dışı
+                            </TableCell>
+                            
+                            
+                         
+                      
+                      </TableRow>
+                      <TableRow >
+                        
+                            <TableCell className="font-medium py-2 px-3 border bg-secondary w-1/4"> 
+                              <div className="flex items-center gap-2 ">
+                             Eş Zamanlı Başvuru Durum
+                               
+                              </div>
+                            </TableCell>
+                            
+                            <TableCell
+                              className="py-2 px-3 border whitespace-normal w-1/4"
+                             
+                             
+                            >
+                              
+                            </TableCell>
+                            <TableCell className="font-medium py-2 px-3 border bg-secondary w-1/4"> 
+                              <div className="flex items-center gap-2 ">
+                              YTB Burs Durumu
+                               
+                              </div>
+                            </TableCell>
+                            
+                            <TableCell
+                              className="py-2 px-3 border whitespace-normal w-1/4"
+                             
+                             
+                            >
+                              Almadı
+                            </TableCell>
+                            
+                            
+                         
+                      
+                      </TableRow>
+                      
+                      
+                      <TableRow >
+                        
+                            <TableCell colSpan={1} className="font-medium py-2 px-3 border bg-secondary"> 
+                              <div className="flex items-center gap-2 ">
+                              Başvuru Tarihi
+                               
+                              </div>
+                            </TableCell>
+                            
+                            <TableCell colSpan={3}
+                              className="py-2 px-3 border whitespace-normal"
+                             
+                             
+                            >
+                              12-04-2024
                             </TableCell>
                            
                             
                          
                       
                       </TableRow>
+                      <TableRow >
+                        
+                            <TableCell colSpan={1} className="font-medium py-2 px-3 border bg-secondary "> 
+                              <div className="flex items-center gap-2 ">
+                              İzin Başlangıç Tarihi
+                               
+                              </div>
+                            </TableCell>
+                            
+                            <TableCell colSpan={3}
+                              className="py-2 px-3 border whitespace-normal "
+                             
+                             
+                            >
+                              19-04-2024
+                            </TableCell>
+                           
+                            
+                         
+                      
+                      </TableRow>
+                      <TableRow >
+                        
+                            <TableCell colSpan={1} className="font-medium py-2 px-3 border bg-secondary "> 
+                              <div className="flex items-center gap-2 ">
+                              İzin Bitiş Tarihi
+                               
+                              </div>
+                            </TableCell>
+                            
+                            <TableCell colSpan={3}
+                              className="py-2 px-3 border whitespace-normal "
+                             
+                             
+                            >
+                              18-04-2025
+                            </TableCell>
+                           
+                            
+                         
+                      
+                      </TableRow>
+                      
                   
                   </TableBody>
+
+                  
                 </Table>
               </div>
             </div>
           </CardContent>
         </Card>
-  )
-}
+  );
+};
 
-export default BasvuruBilgi
+export default BasvuruBilgi;

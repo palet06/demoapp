@@ -5,13 +5,15 @@ import { ChevronDown } from "lucide-react"
 
 import { SettingsSidebar } from "@/app/components/uzmandegerlendirme/settings-sidebar"
 
-import { AddressForm } from "@/app/components/uzmandegerlendirme/address-form"
+
 import { DeleteAccountSection } from "@/app/components/uzmandegerlendirme/delete-account-form"
 import { PersonalInfoCard } from "@/app/components/uzmandegerlendirme/personal-info-card"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import BasvuruBilgi from "./basvuru-bilgi"
 import IletisimBilgileri from "./iletisim-bilgileri"
+import PasaportBilgileri from "./pasaport-bilgileri"
+import EgitimBilgileri from "./egitim-bilgileri"
 
 const UzmanBasvuruDegerlendirme =() => {
   const [visibility, setVisibility] = useState("Public")
@@ -55,8 +57,11 @@ const UzmanBasvuruDegerlendirme =() => {
             <div id="section-iletisim-bilgileri">
               <IletisimBilgileri />
             </div>
-            <div id="section-address-form">
-              <AddressForm />
+            <div id="section-pasaport-bilgileri">
+              <PasaportBilgileri />
+            </div>
+            <div id="section-egitim-bilgileri">
+              <EgitimBilgileri />
             </div>
              
             <div id="section-delete-account">

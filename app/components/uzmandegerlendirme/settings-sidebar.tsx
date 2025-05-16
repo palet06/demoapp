@@ -32,12 +32,12 @@ const menuItems: MenuItem[] = [
   
   {
     title: "Pasaport Bilgileri",
-    href: "#section-address-form",
+    href: "#section-pasaport-bilgileri",
    
   },
   {
     title: "Eğitim Bilgileri",
-    href: "#external-services",
+    href: "#section-egitim-bilgileri",
    
   },
   {
