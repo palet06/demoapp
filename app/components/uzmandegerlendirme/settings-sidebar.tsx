@@ -41,8 +41,13 @@ const menuItems: MenuItem[] = [
    
   },
   {
-    title: "İşveren Bilgileri",
-    href: "#external-services",
+    title: "Görev Bilgileri",
+    href: "#section-gorev-bilgileri",
+   
+  },
+  {
+    title: "İşveren/Kurum Bilgileri",
+    href: "#section-isveren-kurum-bilgileri",
    
   },
   {

@@ -21,70 +21,12 @@ import {
 } from "@/components/ui/select";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
-interface PersonalInfoField {
-  key: string;
-  label: string;
-  value: string;
-  verified?: boolean;
-  span?: number;
-}
+
 
 export function PersonalInfoCard() {
   const [documentType, setDocumentType] = useState("identity");
 
-  const personalInfo: PersonalInfoField[][] = [
-    [
-      { key: "name", label: "Adı", value: "Murat", verified: true },
-      { key: "surname", label: "Soyadı", value: "Hayaloğlu", verified: true },
-    ],
-    [
-      { key: "fatherName", label: "Baba Adı", value: "dddd", verified: true },
-      { key: "motherName", label: "Anne Adı", value: "fffff", verified: true },
-    ],
-    [
-      { key: "gender", label: "Cinsiyeti", value: "dddd", verified: true },
-      {
-        key: "maritalStatus",
-        label: "Medeni Hal",
-        value: "fffffff",
-        verified: true,
-      },
-    ],
-    [
-      {
-        key: "birthPlace",
-        label: "Doğum Yeri",
-        value: "Azerbaycan",
-        verified: true,
-      },
-      { key: "nationality", label: "Uyruk", value: "ffff", verified: true },
-    ],
-    [
-      {
-        key: "birthDate",
-        label: "Doğum Tarihi",
-        value: "26-04-1985 ( 40 yıl 10 gün önce )",
-        verified: true,
-        span: 4,
-      },
-    ],
-    [
-      {
-        key: "foreignId",
-        label: "Yabancı Kimlik Numarası",
-        value: "",
-        span: 4,
-      },
-    ],
-    [
-      {
-        key: "foreignRef",
-        label: "Yurt Dışı Referans Numarası",
-        value: "",
-        span: 4,
-      },
-    ],
-  ];
+
 
   return (
     <Card>

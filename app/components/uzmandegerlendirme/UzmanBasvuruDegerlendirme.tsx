@@ -14,6 +14,8 @@ import BasvuruBilgi from "./basvuru-bilgi"
 import IletisimBilgileri from "./iletisim-bilgileri"
 import PasaportBilgileri from "./pasaport-bilgileri"
 import EgitimBilgileri from "./egitim-bilgileri"
+import GorevBilgileri from "./gorev-bilgileri"
+import IsverenKurumBilgileri from "./isveren-kurum-bilgileri"
 
 const UzmanBasvuruDegerlendirme =() => {
   const [visibility, setVisibility] = useState("Public")
@@ -62,6 +64,12 @@ const UzmanBasvuruDegerlendirme =() => {
             </div>
             <div id="section-egitim-bilgileri">
               <EgitimBilgileri />
+            </div>
+             <div id="section-gorev-bilgileri">
+              <GorevBilgileri />
+            </div>
+             <div id="section-isveren-kurum-bilgileri">
+              <IsverenKurumBilgileri />
             </div>
              
             <div id="section-delete-account">
