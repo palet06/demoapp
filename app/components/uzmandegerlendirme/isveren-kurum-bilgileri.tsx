@@ -1,13 +1,76 @@
 "use client"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Copy, Edit, MoreHorizontal, Share, Trash } from "lucide-react";
+import { useState } from "react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table"
 
 const IsverenKurumBilgileri = () => {
+  const [hovered, setHovered] = useState(false);
+      const [documentType, setDocumentType] = useState("identity");
   return (
     <Card >
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle>İşveren/Kurum Bilgileri</CardTitle>
+            <CardTitle
+          className="text-xl font-bold flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 "
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          İşveren/Kurum Bilgileri
+          {hovered && (
+            <DropdownMenu open={hovered}>
+              <div className="flex gap-2 ">
+                <Button
+                  onClick={() => alert("sdlfj")}
+                  className="cursor-pointer"
+                  size="sm"
+                  variant="ghost"
+                >
+                  <Edit className="w-2 h-2 text-green-600" />
+                </Button>
+                <Button className="cursor-pointer" size="sm" variant="ghost">
+                  <Copy className="w-2 h-2" />
+                </Button>
+                <Button className="cursor-pointer" size="sm" variant="ghost">
+                  <Share className="w-2 h-2" />
+                </Button>
+                <Button className="cursor-pointer" size="sm" variant="ghost">
+                  <Trash className="w-2 h-2 text-red-500" />
+                </Button>
+              </div>
+            </DropdownMenu>
+          )}
+        </CardTitle>
+      <div className="flex items-center gap-2">
+          <Select value={documentType} onValueChange={setDocumentType}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Belge Türü" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="identity">Kimlik Kartı</SelectItem>
+              <SelectItem value="passport">Pasaport</SelectItem>
+              <SelectItem value="residence">İkamet Belgesi</SelectItem>
+              <SelectItem value="driving">Sürücü Belgesi</SelectItem>
+            </SelectContent>
+          </Select>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <MoreHorizontal className="h-4 w-4" />
+                <span className="sr-only">Daha fazla seçenek</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem>Yazdır</DropdownMenuItem>
+              <DropdownMenuItem>PDF olarak indir</DropdownMenuItem>
+              <DropdownMenuItem>Paylaş</DropdownMenuItem>
+              <DropdownMenuItem>Düzenle</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
            
           </CardHeader>
           <CardContent>

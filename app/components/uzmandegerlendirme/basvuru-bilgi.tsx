@@ -7,7 +7,7 @@ const BasvuruBilgi = () => {
   return (
     <Card >
           <CardHeader className="flex flex-row items-center justify-between">
-            <CardTitle>Başvuru Bilgileri</CardTitle>
+            <CardTitle className="text-xl font-bold flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 transition-colors duration-200">Başvuru Bilgileri</CardTitle>
            
           </CardHeader>
           <CardContent>

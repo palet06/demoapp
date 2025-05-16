@@ -17,6 +17,7 @@ import EgitimBilgileri from "./egitim-bilgileri"
 import GorevBilgileri from "./gorev-bilgileri"
 import IsverenKurumBilgileri from "./isveren-kurum-bilgileri"
 
+
 const UzmanBasvuruDegerlendirme =() => {
   const [visibility, setVisibility] = useState("Public")
 
@@ -71,6 +72,7 @@ const UzmanBasvuruDegerlendirme =() => {
              <div id="section-isveren-kurum-bilgileri">
               <IsverenKurumBilgileri />
             </div>
+            
              
             <div id="section-delete-account">
               <DeleteAccountSection />
