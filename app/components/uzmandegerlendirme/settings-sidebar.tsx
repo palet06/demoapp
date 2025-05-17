@@ -17,44 +17,22 @@ const menuItems: MenuItem[] = [
     title: "Başvuru Bilgileri",
     href: "#section-basvuru-bilgi",
     active: true,
+    items: [
+      { title: "Kişi Bilgileri", href: "#section-personel" },
+      { title: "İletişim Bilgilleri", href: "#section-iletisim-bilgileri" },
+      { title: "Pasaport Bilgileri", href: "#section-pasaport-bilgileri" },
+      { title: "Eğitim Bilgileri", href: "#section-egitim-bilgileri" },
+      { title: "Görev Bilgileri", href: "#section-gorev-bilgileri" },
+      { title: "İşveren/Kurum Bilgileri", href: "#section-isveren-kurum-bilgileri" },
+      { title: "Ek Bilgi ve Belgeler", href: "#section-belgeler" },
+    ],
     
-  },
+  },  
   {
-    title: "Kişi Bilgileri",
-    href: "#section-personel",
-    
-  },
-  {
-    title: "İletişim Bilgileri",
-    href: "#section-iletisim-bilgileri",
-    
-  },
-  
-  {
-    title: "Pasaport Bilgileri",
-    href: "#section-pasaport-bilgileri",
-   
-  },
-  {
-    title: "Eğitim Bilgileri",
-    href: "#section-egitim-bilgileri",
-   
-  },
-  {
-    title: "Görev Bilgileri",
-    href: "#section-gorev-bilgileri",
-   
-  },
-  {
-    title: "İşveren/Kurum Bilgileri",
-    href: "#section-isveren-kurum-bilgileri",
-   
-  },
-  {
-    title: "Ek Bilgi ve Belgeler",
-    href: "#external-services",
-   
-  },
+    title: "Değerlendirme İşlemi",
+    href: "#section-degerlendirme",
+  }
+ 
 ]
 
 export function SettingsSidebar() {

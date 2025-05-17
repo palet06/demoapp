@@ -16,6 +16,7 @@ import PasaportBilgileri from "./pasaport-bilgileri"
 import EgitimBilgileri from "./egitim-bilgileri"
 import GorevBilgileri from "./gorev-bilgileri"
 import IsverenKurumBilgileri from "./isveren-kurum-bilgileri"
+import Belgeler from "./belgeler"
 
 
 const UzmanBasvuruDegerlendirme =() => {
@@ -71,6 +72,9 @@ const UzmanBasvuruDegerlendirme =() => {
             </div>
              <div id="section-isveren-kurum-bilgileri">
               <IsverenKurumBilgileri />
+            </div>
+             <div id="section-belgeler">
+              <Belgeler />
             </div>
             
              

@@ -240,6 +240,20 @@ export function PersonalInfoCard() {
                     colSpan={1}
                     className="font-medium py-2 px-3 border bg-secondary "
                   >
+                    <div className="flex items-center gap-2 ">
+                      Yurtdışı Referans Numarası
+                    </div>
+                  </TableCell>
+                  <TableCell
+                    colSpan={3}
+                    className="py-2 px-3 border whitespace-normal"
+                  ></TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell
+                    colSpan={1}
+                    className="font-medium py-2 px-3 border bg-secondary "
+                  >
                     <div className="flex items-center gap-2 ">Eş Adı</div>
                   </TableCell>
                   <TableCell
