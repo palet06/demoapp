@@ -8,6 +8,7 @@ const page = async ({
 }) => {
 
     const { basvuruNo } = await params
+
   return (
     <>
     

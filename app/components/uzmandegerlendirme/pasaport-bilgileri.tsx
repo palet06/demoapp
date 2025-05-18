@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import Link from "next/link";
 
 const PasaportBilgileri = () => {
   const [hovered, setHovered] = useState(false);
@@ -59,8 +60,8 @@ const PasaportBilgileri = () => {
               <SelectItem value="driving">Sürücü Belgesi</SelectItem>
             </SelectContent>
           </Select>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+          <DropdownMenu open={hovered}>
+            <DropdownMenuTrigger  asChild>
               <Button variant="ghost" size="icon">
                 <MoreHorizontal className="h-4 w-4" />
                 <span className="sr-only">Daha fazla seçenek</span>
@@ -145,7 +146,11 @@ const PasaportBilgileri = () => {
                     colSpan={3}
                     className="py-2 px-3 border whitespace-normal w-1/4"
                   >
-                    Resim linki
+                    <Link href={"/3547896_pasaport.pdf"} target="_blank"
+                                className="text-blue-600 hover:text-blue-600/65"
+                                >
+                            Pasaport
+                                </Link>
                   </TableCell>
                 </TableRow>
               </TableBody>

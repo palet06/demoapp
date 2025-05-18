@@ -146,7 +146,7 @@ const Belgeler = () => {
                       <TableRow >                        
                             <TableCell className="py-2 px-3 border border-l border-r-white whitespace-normal w-1/4"> 
                               <div className="flex items-center gap-2  ">
-                            <Link href={"/3547896_pasapoprt.pdf"} target="_blank"
+                            <Link href={"/3547896_pasaport.pdf"} target="_blank"
                                 className="text-blue-600 hover:text-blue-600/65"
                                 >
                             Pasaport
