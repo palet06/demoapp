@@ -5,47 +5,53 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  
-  Search,
-  
-} from "lucide-react";
+import { Search } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 
-
-
 const BasvuruBilgi = () => {
-
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-xl font-bold flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 transition-colors duration-200">
           Başvuru Bilgileri
         </CardTitle>
-        <div 
-           className="flex items-center gap-2">
-          <DropdownMenu >
-            <DropdownMenuTrigger asChild >
-              <Button  variant="outline"><Search/></Button>
+        <div className="flex items-center gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="cursor-pointer" asChild>
+              <Button variant="outline">
+                <Search />
+              </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent  className="w-56">
-              
+            <DropdownMenuContent>
               <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  
+                <DropdownMenuItem className="cursor-pointer">
                   <span>Tüm Başvuruları Sorgula</span>
-                  
                 </DropdownMenuItem>
-                
-                
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger className="cursor-pointer">
+                      <span>Sanayi ve Teknoloji Bakanlığı</span>
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuPortal>
+                      <DropdownMenuSubContent>
+                        <DropdownMenuItem className="cursor-pointer">
+                          <span>Görüş Bilgisi</span>
+                        </DropdownMenuItem>
+                      </DropdownMenuSubContent>
+                    </DropdownMenuPortal>
+                  </DropdownMenuSub>
+                </DropdownMenuGroup>
               </DropdownMenuGroup>
-              
-              
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

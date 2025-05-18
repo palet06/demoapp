@@ -50,31 +50,31 @@ const IletisimBilgileri = () => {
       <div 
            className="flex items-center gap-2">
           <DropdownMenu >
-            <DropdownMenuTrigger asChild >
+            <DropdownMenuTrigger className="cursor-pointer" asChild >
               <Button  variant="outline"><Search/></Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent  >
               
               <DropdownMenuGroup>
-                <DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
                   
                   <span>İkamet/Statü Bilgileri</span>
                   
                 </DropdownMenuItem>
                 <DropdownMenuSeparator/>
-                <DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
                   
                   <span>Kargo Bilgileri</span>
                   
                 </DropdownMenuItem>
                 <DropdownMenuSeparator/>
-                <DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
                   
                   <span>E-Posta Bildirimleri</span>
                   
                 </DropdownMenuItem>
                 <DropdownMenuSeparator/>
-                <DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer" >
                   
                   <span>SMS Bildirimleri</span>
                   

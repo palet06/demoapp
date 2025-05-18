@@ -65,13 +65,13 @@ export function PersonalInfoCard() {
         <div 
            className="flex items-center gap-2">
           <DropdownMenu >
-            <DropdownMenuTrigger asChild >
+            <DropdownMenuTrigger className="cursor-pointer" asChild >
               <Button  variant="outline"><Search/></Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent  >
               
               <DropdownMenuGroup>
-                <DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
                   
                   <span>NVİ Kayıt Sorgula</span>
                   

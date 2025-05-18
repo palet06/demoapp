@@ -1,20 +1,20 @@
 "use client";
 
-import { Copy, Edit, MoreHorizontal, Share, Trash } from "lucide-react";
+import { Copy, Edit, Search, Share, Trash } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { useState } from "react";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
 import Link from "next/link";
 
 const PasaportBilgileri = () => {
   const [hovered, setHovered] = useState(false);
-  const [documentType, setDocumentType] = useState("identity");
+  
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
@@ -48,30 +48,26 @@ const PasaportBilgileri = () => {
             </DropdownMenu>
           )}
         </CardTitle>
-        <div className="flex items-center gap-2">
-          <Select value={documentType} onValueChange={setDocumentType}>
-            <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Belge Türü" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="identity">Kimlik Kartı</SelectItem>
-              <SelectItem value="passport">Pasaport</SelectItem>
-              <SelectItem value="residence">İkamet Belgesi</SelectItem>
-              <SelectItem value="driving">Sürücü Belgesi</SelectItem>
-            </SelectContent>
-          </Select>
-          <DropdownMenu open={hovered}>
-            <DropdownMenuTrigger  asChild>
-              <Button variant="ghost" size="icon">
-                <MoreHorizontal className="h-4 w-4" />
-                <span className="sr-only">Daha fazla seçenek</span>
-              </Button>
+         <div 
+           className="flex items-center gap-2">
+          <DropdownMenu >
+            <DropdownMenuTrigger className="cursor-pointer" asChild >
+              <Button  variant="outline"><Search/></Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem>Yazdır</DropdownMenuItem>
-              <DropdownMenuItem>PDF olarak indir</DropdownMenuItem>
-              <DropdownMenuItem>Paylaş</DropdownMenuItem>
-              <DropdownMenuItem>Düzenle</DropdownMenuItem>
+            <DropdownMenuContent  >
+              
+              <DropdownMenuGroup>
+                <DropdownMenuItem className="cursor-pointer">
+                  
+                  <span>Ülkeye Giriş/Çıkış Kayıtları</span>
+                  
+                </DropdownMenuItem>
+                
+                
+                
+              </DropdownMenuGroup>
+              
+              
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
