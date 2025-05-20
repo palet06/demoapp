@@ -56,7 +56,9 @@ const UzmanTable = ({ uzmanislistesi }: { uzmanislistesi: Application[] }) => {
                   <TableCell>{basvuru.firstName}</TableCell>
                   <TableCell>{basvuru.lastName}</TableCell>
                   <TableCell>{basvuru.foreignIdentityNumber}</TableCell>
-                  <TableCell>{basvuru.applicationDate?.toLocaleDateString()}</TableCell>
+                  <TableCell>
+                    {basvuru.applicationDate?.toLocaleDateString()}
+                  </TableCell>
                   <TableCell>
                     <Badge
                       variant={

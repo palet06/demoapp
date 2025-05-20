@@ -19,7 +19,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-
 const EgitimBilgileri = () => {
   const [hovered, setHovered] = useState(false);
 
@@ -35,7 +34,6 @@ const EgitimBilgileri = () => {
           {hovered && (
             <DropdownMenu open={hovered}>
               <div className="flex gap-2 ">
-               
                 <Button
                   onClick={() => alert("sdlfj")}
                   className="cursor-pointer"

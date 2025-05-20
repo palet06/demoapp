@@ -1,21 +1,14 @@
-import UzmanBasvuruDegerlendirme from '@/app/components/uzmandegerlendirme/UzmanBasvuruDegerlendirme'
-import React from 'react'
+import UzmanBasvuruDegerlendirme from "@/app/components/uzmandegerlendirme/UzmanBasvuruDegerlendirme";
+import React from "react";
 
-const page = async ({
-  params
-}: {
-  params: Promise<{ basvuruNo: string }>
-}) => {
-
-    const { basvuruNo } = await params
+const page = async ({ params }: { params: Promise<{ basvuruNo: string }> }) => {
+  const { basvuruNo } = await params;
 
   return (
     <>
-    
-    <UzmanBasvuruDegerlendirme />
+      <UzmanBasvuruDegerlendirme />
     </>
+  );
+};
 
-  )
-}
-
-export default page
+export default page;

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Copy, Edit, Share, Trash } from "lucide-react";
+import { CircleHelp, SquareCheck, SquareX } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,20 +12,12 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  
-  
-  
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  
-  Search,
-  
-} from "lucide-react";
+import { Search } from "lucide-react";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 export function PersonalInfoCard() {
- 
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -46,42 +38,32 @@ export function PersonalInfoCard() {
                   size="sm"
                   variant="ghost"
                 >
-                  <Edit className="w-2 h-2" />
+                  <SquareCheck className="size-5 text-green-600" />
                 </Button>
                 <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Copy className="w-2 h-2" />
+                  <SquareX className="size-5 text-red-500" />
                 </Button>
                 <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Share className="w-2 h-2" />
-                </Button>
-                <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Trash className="w-2 h-2 text-red-500" />
+                  <CircleHelp className="size-5 text-orange-500" />
                 </Button>
               </div>
             </DropdownMenu>
           )}
         </CardTitle>
 
-        <div 
-           className="flex items-center gap-2">
-          <DropdownMenu >
-            <DropdownMenuTrigger className="cursor-pointer" asChild >
-              <Button  variant="outline"><Search/></Button>
+        <div className="flex items-center gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="cursor-pointer" asChild>
+              <Button variant="outline">
+                <Search />
+              </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent  >
-              
+            <DropdownMenuContent>
               <DropdownMenuGroup>
                 <DropdownMenuItem className="cursor-pointer">
-                  
                   <span>NVİ Kayıt Sorgula</span>
-                  
                 </DropdownMenuItem>
-                
-                
-                
               </DropdownMenuGroup>
-              
-              
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

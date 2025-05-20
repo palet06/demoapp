@@ -1,10 +1,16 @@
 "use client";
 
-import { Copy, Edit, Search, Share, Trash } from "lucide-react";
+import { CircleHelp, Search, SquareCheck, SquareX } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
@@ -14,7 +20,7 @@ import Link from "next/link";
 
 const PasaportBilgileri = () => {
   const [hovered, setHovered] = useState(false);
-  
+
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
@@ -33,41 +39,31 @@ const PasaportBilgileri = () => {
                   size="sm"
                   variant="ghost"
                 >
-                  <Edit className="w-2 h-2" />
+                  <SquareCheck className="size-5 text-green-600" />
                 </Button>
                 <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Copy className="w-2 h-2" />
+                  <SquareX className="size-5 text-red-500" />
                 </Button>
                 <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Share className="w-2 h-2" />
-                </Button>
-                <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Trash className="w-2 h-2 text-red-500" />
+                  <CircleHelp className="size-5 text-orange-500" />
                 </Button>
               </div>
             </DropdownMenu>
           )}
         </CardTitle>
-         <div 
-           className="flex items-center gap-2">
-          <DropdownMenu >
-            <DropdownMenuTrigger className="cursor-pointer" asChild >
-              <Button  variant="outline"><Search/></Button>
+        <div className="flex items-center gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger className="cursor-pointer" asChild>
+              <Button variant="outline">
+                <Search />
+              </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent  >
-              
+            <DropdownMenuContent>
               <DropdownMenuGroup>
                 <DropdownMenuItem className="cursor-pointer">
-                  
                   <span>Ülkeye Giriş/Çıkış Kayıtları</span>
-                  
                 </DropdownMenuItem>
-                
-                
-                
               </DropdownMenuGroup>
-              
-              
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
@@ -142,11 +138,13 @@ const PasaportBilgileri = () => {
                     colSpan={3}
                     className="py-2 px-3 border whitespace-normal w-1/4"
                   >
-                    <Link href={"/3547896_pasaport.pdf"} target="_blank"
-                                className="text-blue-600 hover:text-blue-600/65"
-                                >
-                            Pasaport
-                                </Link>
+                    <Link
+                      href={"/3547896_pasaport.pdf"}
+                      target="_blank"
+                      className="text-blue-600 hover:text-blue-600/65"
+                    >
+                      Pasaport
+                    </Link>
                   </TableCell>
                 </TableRow>
               </TableBody>

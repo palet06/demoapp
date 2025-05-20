@@ -1,19 +1,30 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { MoreHorizontal } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import { MoreHorizontal } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function BasicSettingsForm() {
-  const [isAvailable, setIsAvailable] = useState(true)
+  const [isAvailable, setIsAvailable] = useState(true);
 
   return (
     <Card>
@@ -49,7 +60,9 @@ export function BasicSettingsForm() {
         <div className="flex items-center justify-between">
           <Label htmlFor="photo">Photo</Label>
           <div className="flex items-center gap-4">
-            <span className="text-sm text-muted-foreground">150x150px (JPG, PNG image)</span>
+            <span className="text-sm text-muted-foreground">
+              150x150px (JPG, PNG image)
+            </span>
             <div className="relative h-12 w-12 overflow-hidden rounded-full">
               <Image
                 src="/placeholder.svg?height=150&width=150"
@@ -98,7 +111,11 @@ export function BasicSettingsForm() {
 
         <div className="flex items-center justify-between">
           <Label htmlFor="availability">Available to hire</Label>
-          <Switch id="availability" checked={isAvailable} onCheckedChange={setIsAvailable} />
+          <Switch
+            id="availability"
+            checked={isAvailable}
+            onCheckedChange={setIsAvailable}
+          />
         </div>
 
         <div className="flex justify-end">
@@ -106,5 +123,5 @@ export function BasicSettingsForm() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

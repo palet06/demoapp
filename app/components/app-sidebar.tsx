@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import type * as React from "react"
+import type * as React from "react";
 import {
-  
   BookOpen,
-  
-  
   Dock,
-
   GalleryVerticalEnd,
- 
   Settings2,
   ShieldUser,
- 
-} from "lucide-react"
+} from "lucide-react";
 
-import { NavMain } from "./nav-main"
+import { NavMain } from "./nav-main";
 
-import { NavUser } from "./nav-user"
-import { TeamSwitcher } from "./team-switcher"
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@/components/ui/sidebar"
+import { NavUser } from "./nav-user";
+import { TeamSwitcher } from "./team-switcher";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarRail,
+} from "@/components/ui/sidebar";
 
 // This is sample data.
 const data = {
@@ -34,7 +34,6 @@ const data = {
       logo: GalleryVerticalEnd,
       plan: "İç Kullanıcı",
     },
-    
   ],
   navMain: [
     {
@@ -116,12 +115,10 @@ const data = {
           title: "Manuel Başvuru Ekle",
           url: "#",
         },
-        
       ],
     },
   ],
-  
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -131,12 +128,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

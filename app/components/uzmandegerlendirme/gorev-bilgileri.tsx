@@ -8,7 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Copy, Edit, Search, Share, Trash } from "lucide-react";
+import { CircleHelp, Search, SquareCheck, SquareX } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
@@ -37,16 +37,13 @@ const GorevBilgileri = () => {
                   size="sm"
                   variant="ghost"
                 >
-                  <Edit className="w-2 h-2 text-green-600" />
+                  <SquareCheck className="size-5 text-green-600" />
                 </Button>
                 <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Copy className="w-2 h-2" />
+                  <SquareX className="size-5 text-red-500" />
                 </Button>
                 <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Share className="w-2 h-2" />
-                </Button>
-                <Button className="cursor-pointer" size="sm" variant="ghost">
-                  <Trash className="w-2 h-2 text-red-500" />
+                  <CircleHelp className="size-5 text-orange-500" />
                 </Button>
               </div>
             </DropdownMenu>
@@ -72,8 +69,6 @@ const GorevBilgileri = () => {
                 <DropdownMenuItem className="cursor-pointer">
                   <span>İşe Giriş/Çıkış Bildirimi</span>
                 </DropdownMenuItem>
-                
-                
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>

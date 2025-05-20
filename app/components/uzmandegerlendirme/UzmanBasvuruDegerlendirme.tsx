@@ -6,7 +6,7 @@ import { tr } from "date-fns/locale/tr";
 
 import { SettingsSidebar } from "@/app/components/uzmandegerlendirme/settings-sidebar";
 
-import { DeleteAccountSection } from "@/app/components/uzmandegerlendirme/delete-account-form";
+import { DegerlendirmeSonucIslemi } from "@/app/components/uzmandegerlendirme/degerlendirme-sonuc-islemi";
 import { PersonalInfoCard } from "@/app/components/uzmandegerlendirme/personal-info-card";
 import { Button } from "@/components/ui/button";
 
@@ -25,8 +25,6 @@ import {
 import { Calendar } from "@/components/ui/calendar";
 
 const UzmanBasvuruDegerlendirme = () => {
-
-
   const [date, setDate] = useState<Date | undefined>(new Date());
   const router = useRouter();
 
@@ -46,12 +44,7 @@ const UzmanBasvuruDegerlendirme = () => {
               İşlem Bekleyen Başvuru
             </p>
           </div>
-          <div
-            
-          
-            className="flex items-center gap-2"
-          >
-            
+          <div className="flex items-center gap-2">
             <Popover>
               <PopoverTrigger className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 px-4 py-2 has-[>svg]:px-3  gap-1 bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 cursor-pointer">
                 <Clock />
@@ -111,8 +104,8 @@ const UzmanBasvuruDegerlendirme = () => {
               <Belgeler />
             </div>
 
-            <div id="section-delete-account">
-              <DeleteAccountSection />
+            <div id="section-degerlendirme-sonuc-islemi">
+              <DegerlendirmeSonucIslemi />
             </div>
           </div>
         </div>
