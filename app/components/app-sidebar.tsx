@@ -71,7 +71,7 @@ const data = {
       items: [
         {
           title: "Onay/Ret Bekleyen İşlemler",
-          url: "#",
+          url: "/dashboard/smlistesi",
         },
         {
           title: "Güncelleme Onay Bekleyen",

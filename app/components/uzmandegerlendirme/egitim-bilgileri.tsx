@@ -1,4 +1,5 @@
 "use client";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,6 +22,7 @@ import Link from "next/link";
 
 const EgitimBilgileri = () => {
   const [hovered, setHovered] = useState(false);
+  
 
   return (
     <Card>

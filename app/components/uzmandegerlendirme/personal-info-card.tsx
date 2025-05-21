@@ -1,6 +1,6 @@
 "use client";
-import { useDegerlendirme } from "@/contexts/DegerlendirmeContext";
 
+import { useDegerlendirmeStore } from "@/app/store/store";
 import { useState } from "react";
 import Image from "next/image";
 import { Check, HelpCircle, X } from "lucide-react";
@@ -38,10 +38,9 @@ type NoteKararsizType = {
 };
 
 export function PersonalInfoCard() {
-
-  const {degerlendirme,setDegerlendirme} = useDegerlendirme();
-  
-  
+  const degerlendirmeKaydet = useDegerlendirmeStore(
+    (state) => state.setDegerlendirme
+  );
   
   const [noteOnay, setNoteOnay] = useState<NoteOnayType>({
     onayMessage: null,
@@ -51,14 +50,13 @@ export function PersonalInfoCard() {
     retMessage: null,
     retErrorMessage: null,
   });
-  
+
   const [noteKararsiz, setNoteKararsiz] = useState<NoteKararsizType>({
     kararsizMessage: null,
     kararsizErrorMessage: null,
   });
-  
+
   const [borderColor, setBorderColor] = useState<string>("");
-  
 
   const handleNotes = (whichNote: string) => {
     switch (whichNote) {
@@ -73,15 +71,17 @@ export function PersonalInfoCard() {
             onayErrorMessage: "Onay notunuz en az 10 karakter olmalı",
           });
         } else {
-          setDegerlendirme({ degerendirenKullanici:"murat hayaloğlu",sectionKisiBilgileri:{sonuc:"onay",note:noteOnay.onayMessage?noteOnay.onayMessage:""}})
+          //setDegerlendirme({ degerendirenKullanici:"murat hayaloğlu",sectionKisiBilgileri:{sonuc:"onay",note:noteOnay.onayMessage?noteOnay.onayMessage:""}})
           setNoteOnay({
             onayMessage: noteOnay.onayMessage,
             onayErrorMessage: "",
           });
-          console.log(degerlendirme.degerendirenKullanici)
+
           setBorderColor("border-1 border-green-500");
-          
-          
+          degerlendirmeKaydet({
+            degerlendirenKullanici: "murat.hayaloğlu",
+            sectionKisiBilgileri: {note: noteOnay.onayMessage?noteOnay.onayMessage:"",sonuc:"onay"}})
+
           setHovered(false);
         }
 
@@ -96,8 +96,9 @@ export function PersonalInfoCard() {
         } else {
           setNoteRet({ retMessage: noteRet.retMessage, retErrorMessage: "" });
           setBorderColor("border-1 border-red-500");
-          setDegerlendirme({degerendirenKullanici:"murat.hayaloğlu",sectionKisiBilgileri:{sonuc:"ret",note:noteRet.retMessage?noteRet.retMessage:""}})
-          
+         degerlendirmeKaydet({
+            degerlendirenKullanici: "murat.hayaloğlu",
+            sectionKisiBilgileri: {note: noteRet.retMessage?noteRet.retMessage:"",sonuc:"ret"}})
           setHovered(false);
         }
 
@@ -118,8 +119,8 @@ export function PersonalInfoCard() {
             kararsizErrorMessage: "",
           });
           setBorderColor("border-1 border-orange-300");
-          setDegerlendirme({degerendirenKullanici:"murat.hayaloğlu",sectionKisiBilgileri:{sonuc:"kararsiz",note:noteKararsiz.kararsizMessage?noteKararsiz.kararsizMessage:""}})
-          
+          //setDegerlendirme({degerendirenKullanici:"murat.hayaloğlu",sectionKisiBilgileri:{sonuc:"kararsiz",note:noteKararsiz.kararsizMessage?noteKararsiz.kararsizMessage:""}})
+
           setHovered(false);
         }
 
@@ -300,7 +301,7 @@ export function PersonalInfoCard() {
                   </div>
                 </PopoverContent>
               </Popover>
-            </div>           
+            </div>
           )}
         </CardTitle>
 
