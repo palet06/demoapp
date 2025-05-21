@@ -41,7 +41,7 @@ export function PersonalInfoCard() {
   const degerlendirmeKaydet = useDegerlendirmeStore(
     (state) => state.setDegerlendirme
   );
-  
+
   const [noteOnay, setNoteOnay] = useState<NoteOnayType>({
     onayMessage: null,
     onayErrorMessage: null,
@@ -78,9 +78,15 @@ export function PersonalInfoCard() {
           });
 
           setBorderColor("border-1 border-green-500");
-          degerlendirmeKaydet({
-            degerlendirenKullanici: "murat.hayaloğlu",
-            sectionKisiBilgileri: {note: noteOnay.onayMessage?noteOnay.onayMessage:"",sonuc:"onay"}})
+          degerlendirmeKaydet("murat.hayaloğlu",{
+            
+            sectionKisiBilgileri: {
+              note: noteOnay.onayMessage ? noteOnay.onayMessage : "",
+              sonuc: "onay",
+              css: borderColor,
+              anchor: "#section-personel",
+            },
+          });
 
           setHovered(false);
         }
@@ -96,9 +102,18 @@ export function PersonalInfoCard() {
         } else {
           setNoteRet({ retMessage: noteRet.retMessage, retErrorMessage: "" });
           setBorderColor("border-1 border-red-500");
-         degerlendirmeKaydet({
-            degerlendirenKullanici: "murat.hayaloğlu",
-            sectionKisiBilgileri: {note: noteRet.retMessage?noteRet.retMessage:"",sonuc:"ret"}})
+          degerlendirmeKaydet("murat.hayaloğlu",{
+            
+            sectionKisiBilgileri: {
+              note: noteRet.retMessage ? noteRet.retMessage : "",
+              sonuc: "ret",
+              css:"border-1 border-red-500" ,
+              anchor: "#section-personel",
+            },
+            
+           
+          });
+
           setHovered(false);
         }
 

@@ -6,12 +6,55 @@ type Degerlendirme = {
   sectionKisiBilgileri: {
     sonuc: string;
     note: string;
+    css: string;
+    anchor:string;
+  };
+  sectionIletisimBilgileri: {
+    sonuc: string;
+    note: string;
+    css: string;
+     anchor:string;
+  };
+  sectionPasaportBilgileri: {
+    sonuc: string;
+    note: string;
+    css: string;
+     anchor:string;
+  };
+  sectionEgitimBilgileri: {
+    sonuc: string;
+    note: string;
+    css: string;
+     anchor:string;
+  };
+  sectionGorevBilgileri: {
+    sonuc: string;
+    note: string;
+    css: string;
+     anchor:string;
+  };
+  sectionIsverenBilgileri: {
+    sonuc: string;
+    note: string;
+    css: string;
+     anchor:string;
+  };
+  sectionBelgeBilgileri: {
+    sonuc: string;
+    note: string;
+    css: string;
+     anchor:string;
+  };
+  nihaiKararBilgileri: {
+    sonuc: string;
+    note: string;
+    css: string;
   };
 };
 
 type DegerlendirmeStore = {
-  degerlendirme: Degerlendirme;
-  setDegerlendirme: (degerlendirme: Degerlendirme) => void;
+  degerlendirmeler: Degerlendirme[];
+  setDegerlendirme: (degerlendirenKullanici: string, updatedFields: Partial<Degerlendirme>) => void;
 };
 
 export const useDegerlendirmeStore = create<
@@ -20,24 +63,23 @@ export const useDegerlendirmeStore = create<
 >(
   persist(
     (set) => ({
-      degerlendirme: {
-        degerlendirenKullanici: '',
-        sectionKisiBilgileri: {
-          sonuc: '',
-          note: '',
-        },
-      },
-      setDegerlendirme: (newDegerlendirme) => {
+      degerlendirmeler: [],
+      setDegerlendirme: (degerlendirenKullanici, updatedFields) => {
         set((state) => ({
-          degerlendirme: {
-            ...state.degerlendirme,
-            ...newDegerlendirme,
-          },
+          degerlendirmeler: state.degerlendirmeler.map((deg) => {
+            // Eğer degerlendirenKullanici eşleşiyorsa, sadece o alanı güncelle
+            if (deg.degerlendirenKullanici === degerlendirenKullanici) {
+              // Güncellenmesi gereken alanları birleştiriyoruz
+              return { ...deg, ...updatedFields };
+            }
+            // Eğer kullanıcı eşleşmiyorsa, mevcut değeri olduğu gibi bırak
+            return deg;
+          }),
         }));
       },
     }),
     {
-      name: 'degerlendirme-storage', // unique name
+      name: 'degerlendirme-storage',
     }
   )
-)
+);
