@@ -1,10 +1,9 @@
 "use client";
 
 
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+
 import { Clock, CornerUpRight } from "lucide-react";
-import { tr } from "date-fns/locale/tr";
+
 
 import { SettingsSidebar } from "@/app/components/uzmandegerlendirme/settings-sidebar";
 
@@ -24,17 +23,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
+
 
 
 
 const UzmanBasvuruDegerlendirme = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push("http://localhost:3000/dashboard/uzmanislistesi");
-  };
+  
 
   return (
    
@@ -59,16 +53,10 @@ const UzmanBasvuruDegerlendirme = () => {
               </PopoverTrigger>
 
               <PopoverContent>
-                <Calendar
-                  mode="single"
-                  locale={tr}
-                  selected={date}
-                  onSelect={setDate}
-                  className="rounded-md border cursor-pointer flex flex-col gap-2"
-                />
+                
                 <div className="flex justify-between items-center mt-2 w-full">
                   <Button
-                    onClick={() => handleClick()}
+                   
                     className="cursor-pointer w-full"
                     variant="default"
                   >
