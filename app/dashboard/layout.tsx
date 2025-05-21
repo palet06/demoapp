@@ -1,5 +1,6 @@
 import { AppSidebar } from "@/app/components/app-sidebar"
 
+
 import { Separator } from "@/components/ui/separator"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import DynamicBreadcrumb from "../components/DynamicBreadcrumb"
@@ -22,7 +23,10 @@ export default function DashboardRootLayout({
           </div>
         </header>
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+          
+
             {children}
+          
           {/* <div className="grid auto-rows-min gap-4 md:grid-cols-3">
             <div className="aspect-video rounded-xl bg-muted/50" />
             <div className="aspect-video rounded-xl bg-muted/50" />

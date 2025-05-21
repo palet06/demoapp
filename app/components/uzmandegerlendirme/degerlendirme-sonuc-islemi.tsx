@@ -6,9 +6,10 @@ import { Button } from "@/components/ui/button";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  Check,
   CheckCircle,
   ExternalLink,
-  PackagePlus,
+  
   RefreshCcw,
   X,
 } from "lucide-react";
@@ -37,7 +38,7 @@ export function DegerlendirmeSonucIslemi() {
       id: "option1",
       title: "Onay",
       cssValue: "bg-green-400 text-white",
-      icon: <PackagePlus className="h-6 w-6 text-white" />,
+      icon: <Check className="h-6 w-6 text-white" />,
     },
     {
       id: "option2",
@@ -139,7 +140,7 @@ export function DegerlendirmeSonucIslemi() {
               className={
                 `
                 ${selected==="option1"&&"bg-green-400 text-white"}
-                ${selected==="option12"&&"bg-red-400 text-white"}
+                ${selected==="option2"&&"bg-red-400 text-white"}
                 ${selected==="option3"&&"bg-orange-400 text-white"}
                 ${selected==="option4"&&"bg-gray-400 text-white"}
                 `

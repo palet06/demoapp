@@ -4,10 +4,10 @@ import "./globals.css";
 
 
 
-
 export const metadata: Metadata = {
   title: "Başvuru Değerlendirme Demo",
-  description: "Başvuru Değerlendirme Ekranları Tasarım ve Fonksiyonalite Testleri",
+  description:
+    "Başvuru Değerlendirme Ekranları Tasarım ve Fonksiyonalite Testleri",
 };
 
 export default function RootLayout({
@@ -16,12 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        
-      >
-        {children}
-      </body>
-    </html>
+   
+      <html lang="en">
+        <body>{children}</body>
+      </html>
+    
   );
 }

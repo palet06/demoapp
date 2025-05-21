@@ -1,4 +1,5 @@
 "use client";
+import { useDegerlendirme } from "@/contexts/DegerlendirmeContext";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -23,14 +24,114 @@ import {
 } from "@/components/ui/popover";
 import { Textarea } from "@/components/ui/textarea";
 
+type NoteOnayType = {
+  onayMessage: string | null;
+  onayErrorMessage: string | null;
+};
+type NoteRetType = {
+  retMessage: string | null;
+  retErrorMessage: string | null;
+};
+type NoteKararsizType = {
+  kararsizMessage: string | null;
+  kararsizErrorMessage: string | null;
+};
+
 export function PersonalInfoCard() {
+
+  const {degerlendirme,setDegerlendirme} = useDegerlendirme();
+  
+  
+  
+  const [noteOnay, setNoteOnay] = useState<NoteOnayType>({
+    onayMessage: null,
+    onayErrorMessage: null,
+  });
+  const [noteRet, setNoteRet] = useState<NoteRetType>({
+    retMessage: null,
+    retErrorMessage: null,
+  });
+  
+  const [noteKararsiz, setNoteKararsiz] = useState<NoteKararsizType>({
+    kararsizMessage: null,
+    kararsizErrorMessage: null,
+  });
+  
+  const [borderColor, setBorderColor] = useState<string>("");
+  
+
+  const handleNotes = (whichNote: string) => {
+    switch (whichNote) {
+      case "onay":
+        if (
+          noteOnay.onayMessage !== "" &&
+          noteOnay.onayMessage !== null &&
+          noteOnay.onayMessage.length < 10
+        ) {
+          setNoteOnay({
+            ...noteOnay,
+            onayErrorMessage: "Onay notunuz en az 10 karakter olmalı",
+          });
+        } else {
+          setDegerlendirme({ degerendirenKullanici:"murat hayaloğlu",sectionKisiBilgileri:{sonuc:"onay",note:noteOnay.onayMessage?noteOnay.onayMessage:""}})
+          setNoteOnay({
+            onayMessage: noteOnay.onayMessage,
+            onayErrorMessage: "",
+          });
+          console.log(degerlendirme.degerendirenKullanici)
+          setBorderColor("border-1 border-green-500");
+          
+          
+          setHovered(false);
+        }
+
+        break;
+
+      case "ret":
+        if (!noteRet.retMessage || noteRet.retMessage.length < 10) {
+          setNoteRet({
+            ...noteRet,
+            retErrorMessage: "Ret notunuz en az 10 karakter olmalı",
+          });
+        } else {
+          setNoteRet({ retMessage: noteRet.retMessage, retErrorMessage: "" });
+          setBorderColor("border-1 border-red-500");
+          setDegerlendirme({degerendirenKullanici:"murat.hayaloğlu",sectionKisiBilgileri:{sonuc:"ret",note:noteRet.retMessage?noteRet.retMessage:""}})
+          
+          setHovered(false);
+        }
+
+        break;
+
+      case "kararsiz":
+        if (
+          !noteKararsiz.kararsizMessage ||
+          noteKararsiz.kararsizMessage.length < 10
+        ) {
+          setNoteKararsiz({
+            ...noteKararsiz,
+            kararsizErrorMessage: "Kararsız notunuz en az 10 karakter olmalı",
+          });
+        } else {
+          setNoteKararsiz({
+            kararsizMessage: noteKararsiz.kararsizMessage,
+            kararsizErrorMessage: "",
+          });
+          setBorderColor("border-1 border-orange-300");
+          setDegerlendirme({degerendirenKullanici:"murat.hayaloğlu",sectionKisiBilgileri:{sonuc:"kararsiz",note:noteKararsiz.kararsizMessage?noteKararsiz.kararsizMessage:""}})
+          
+          setHovered(false);
+        }
+
+        break;
+
+      default:
+        break;
+    }
+  };
+
   const [hovered, setHovered] = useState(false);
   const [activePopover, setActivePopover] = useState<string | null>(null);
-  const [notes, setNotes] = useState({
-    approve: "",
-    reject: "",
-    help: "",
-  });
 
   const handleMouseEnter = () => setHovered(true);
   const handleMouseLeave = () => {
@@ -51,7 +152,7 @@ export function PersonalInfoCard() {
   };
 
   return (
-    <Card>
+    <Card className={`${borderColor}`}>
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle
           className="text-xl font-bold flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 transition-colors duration-200"
@@ -61,7 +162,7 @@ export function PersonalInfoCard() {
           Kişi Bilgileri
           {hovered && (
             <div
-              className={`flex gap-2 transition-opacity duration-200 ${
+              className={`flex gap-5 transition-opacity duration-200 ${
                 hovered ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -74,7 +175,7 @@ export function PersonalInfoCard() {
                     variant="outline"
                     className="h-6 w-6 p-0 border-0 text-green-500 hover:text-green-600 hover:bg-green-50"
                   >
-                    <Check className="h-5 w-5" />
+                    <Check className="size-5" />
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-80" align="start">
@@ -82,16 +183,26 @@ export function PersonalInfoCard() {
                     <h3 className="font-medium">Onay Notu</h3>
                     <Textarea
                       placeholder="Onay notunuzu buraya yazın..."
-                      value={notes.approve}
+                      value={noteOnay.onayMessage ? noteOnay.onayMessage : ""}
                       onChange={(e) =>
-                        setNotes({ ...notes, approve: e.target.value })
+                        setNoteOnay({
+                          onayMessage: e.target.value,
+                          onayErrorMessage: "",
+                        })
                       }
                       className="min-h-[100px]"
                     />
                     <div className="flex justify-end">
+                      {noteOnay.onayErrorMessage && (
+                        <p className="text-red-500 text-sm">
+                          {noteOnay.onayErrorMessage}
+                        </p>
+                      )}
+
                       <Button
                         size="sm"
                         className="bg-green-600 hover:bg-green-700"
+                        onClick={() => handleNotes("onay")}
                       >
                         Kaydet
                       </Button>
@@ -109,7 +220,7 @@ export function PersonalInfoCard() {
                     variant="outline"
                     className="h-6 w-6 p-0 border-0 text-red-500 hover:text-red-600 hover:bg-red-50"
                   >
-                    <X className="h-5 w-5" />
+                    <X className="size-5" />
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-80" align="start">
@@ -117,14 +228,26 @@ export function PersonalInfoCard() {
                     <h3 className="font-medium">Red Notu</h3>
                     <Textarea
                       placeholder="Red notunuzu buraya yazın..."
-                      value={notes.reject}
+                      value={noteRet.retMessage ? noteRet.retMessage : ""}
                       onChange={(e) =>
-                        setNotes({ ...notes, reject: e.target.value })
+                        setNoteRet({
+                          retMessage: e.target.value,
+                          retErrorMessage: "",
+                        })
                       }
                       className="min-h-[100px]"
                     />
                     <div className="flex justify-end">
-                      <Button size="sm" className="bg-red-600 hover:bg-red-700">
+                      {noteRet.retErrorMessage && (
+                        <p className="text-red-500 text-sm">
+                          {noteRet.retErrorMessage}
+                        </p>
+                      )}
+                      <Button
+                        size="sm"
+                        className="bg-red-600 hover:bg-red-700"
+                        onClick={() => handleNotes("ret")}
+                      >
                         Kaydet
                       </Button>
                     </div>
@@ -139,7 +262,7 @@ export function PersonalInfoCard() {
                     variant="outline"
                     className="h-6 w-6 p-0 border-0 text-orange-500 hover:text-orange-600 hover:bg-orange-50"
                   >
-                    <HelpCircle className="h-5 w-5" />
+                    <HelpCircle className="size-5" />
                   </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-80" align="start">
@@ -147,16 +270,29 @@ export function PersonalInfoCard() {
                     <h3 className="font-medium">Yardım Notu</h3>
                     <Textarea
                       placeholder="Yardım notunuzu buraya yazın..."
-                      value={notes.help}
+                      value={
+                        noteKararsiz.kararsizMessage
+                          ? noteKararsiz.kararsizMessage
+                          : ""
+                      }
                       onChange={(e) =>
-                        setNotes({ ...notes, help: e.target.value })
+                        setNoteKararsiz({
+                          kararsizMessage: e.target.value,
+                          kararsizErrorMessage: "",
+                        })
                       }
                       className="min-h-[100px]"
                     />
                     <div className="flex justify-end">
+                      {noteKararsiz.kararsizErrorMessage && (
+                        <p className="text-red-500 text-sm">
+                          {noteKararsiz.kararsizErrorMessage}
+                        </p>
+                      )}
                       <Button
                         size="sm"
                         className="bg-orange-600 hover:bg-orange-700"
+                        onClick={() => handleNotes("kararsiz")}
                       >
                         Kaydet
                       </Button>
@@ -164,25 +300,7 @@ export function PersonalInfoCard() {
                   </div>
                 </PopoverContent>
               </Popover>
-            </div>
-            // <DropdownMenu open={hovered}>
-            //   <div className="flex gap-2 ">
-            //     <Button
-            //       onClick={() => alert("sdlfj")}
-            //       className="cursor-pointer"
-            //       size="sm"
-            //       variant="ghost"
-            //     >
-            //       <SquareCheck className="size-5 text-green-600" />
-            //     </Button>
-            //     <Button className="cursor-pointer" size="sm" variant="ghost">
-            //       <SquareX className="size-5 text-red-500" />
-            //     </Button>
-            //     <Button className="cursor-pointer" size="sm" variant="ghost">
-            //       <CircleHelp className="size-5 text-orange-500" />
-            //     </Button>
-            //   </div>
-            // </DropdownMenu>
+            </div>           
           )}
         </CardTitle>
 

@@ -1,4 +1,6 @@
 "use client";
+
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Clock, CornerUpRight } from "lucide-react";
@@ -24,6 +26,8 @@ import {
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 
+
+
 const UzmanBasvuruDegerlendirme = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const router = useRouter();
@@ -33,6 +37,9 @@ const UzmanBasvuruDegerlendirme = () => {
   };
 
   return (
+   
+      
+    
     <div className="container mx-auto ">
       <div className="flex flex-col space-y-4 p-4 md:p-8 ">
         <div className="flex items-center justify-between">
@@ -111,6 +118,8 @@ const UzmanBasvuruDegerlendirme = () => {
         </div>
       </div>
     </div>
+    
+  
   );
 };
 
