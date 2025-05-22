@@ -6,7 +6,7 @@ const page = async ({ params }: { params: Promise<{ basvuruNo: string }> }) => {
 
   return (
     <>
-      <UzmanBasvuruDegerlendirme />
+      <UzmanBasvuruDegerlendirme basvuruNo={basvuruNo} kullanici={"kemal.yetisir"} />
     </>
   );
 };

@@ -73,12 +73,12 @@ const Belgeler = () => {
           });
 
           setBorderColor("border-1 border-green-500");
-          degerlendirmeKaydet("murat.hayaloglu", {
+          degerlendirmeKaydet("kemal.yetisir", {
             sectionBelgeBilgileri: {
               note: noteOnay.onayMessage ? noteOnay.onayMessage : "",
               sonuc: "onay",
               css: borderColor,
-              anchor: "#section-personel",
+              anchor: "#section-belgeler",
             },
           });
 
@@ -96,12 +96,12 @@ const Belgeler = () => {
         } else {
           setNoteRet({ retMessage: noteRet.retMessage, retErrorMessage: "" });
           setBorderColor("border-1 border-red-500");
-          degerlendirmeKaydet("murat.hayaloglu", {
+          degerlendirmeKaydet("kemal.yetisir", {
             sectionBelgeBilgileri: {
               note: noteRet.retMessage ? noteRet.retMessage : "",
               sonuc: "ret",
               css: "border-1 border-red-500",
-              anchor: "#section-personel",
+              anchor: "#section-belgeler",
             },
           });
 
@@ -125,8 +125,14 @@ const Belgeler = () => {
             kararsizErrorMessage: "",
           });
           setBorderColor("border-1 border-orange-300");
-          //setDegerlendirme({degerendirenKullanici:"murat.hayaloğlu",sectionKisiBilgileri:{sonuc:"kararsiz",note:noteKararsiz.kararsizMessage?noteKararsiz.kararsizMessage:""}})
-
+          degerlendirmeKaydet("kemal.yetisir", {
+            sectionBelgeBilgileri: {
+              note: noteKararsiz.kararsizMessage ? noteKararsiz.kararsizMessage : "",
+              sonuc: "kararsiz",
+              css: "border-1 border-orange-500",
+              anchor: "#section-belgeler",
+            },
+          });
           setHovered(false);
         }
 

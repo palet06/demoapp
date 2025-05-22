@@ -14,7 +14,6 @@ type NoteKararsizType = {
   kararsizErrorMessage: string | null;
 };
 
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,16 +22,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {  Check, HelpCircle, Search, X } from "lucide-react";
+import { Check, HelpCircle, Search, X } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-
-
-
 
 import {
   Popover,
@@ -42,28 +38,27 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 
 const IletisimBilgileri = () => {
-   const degerlendirmeKaydet = useDegerlendirmeStore(
+  const degerlendirmeKaydet = useDegerlendirmeStore(
     (state) => state.setDegerlendirme
   );
 
   const [noteOnay, setNoteOnay] = useState<NoteOnayType>({
-      onayMessage: null,
-      onayErrorMessage: null,
-    });
-    const [noteRet, setNoteRet] = useState<NoteRetType>({
-      retMessage: null,
-      retErrorMessage: null,
-    });
-  
-    const [noteKararsiz, setNoteKararsiz] = useState<NoteKararsizType>({
-      kararsizMessage: null,
-      kararsizErrorMessage: null,
-    });
+    onayMessage: null,
+    onayErrorMessage: null,
+  });
+  const [noteRet, setNoteRet] = useState<NoteRetType>({
+    retMessage: null,
+    retErrorMessage: null,
+  });
 
-  
-    const [borderColor, setBorderColor] = useState<string>("");
+  const [noteKararsiz, setNoteKararsiz] = useState<NoteKararsizType>({
+    kararsizMessage: null,
+    kararsizErrorMessage: null,
+  });
 
-    const handleNotes = (whichNote: string) => {
+  const [borderColor, setBorderColor] = useState<string>("");
+
+  const handleNotes = (whichNote: string) => {
     switch (whichNote) {
       case "onay":
         if (
@@ -83,12 +78,12 @@ const IletisimBilgileri = () => {
           });
 
           setBorderColor("border-1 border-green-500");
-          degerlendirmeKaydet("murat.hayaloglu", {
+          degerlendirmeKaydet("kemal.yetisir", {
             sectionIletisimBilgileri: {
               note: noteOnay.onayMessage ? noteOnay.onayMessage : "",
               sonuc: "onay",
               css: borderColor,
-              anchor: "#section-personel",
+              anchor: "#section-iletisim-bilgileri",
             },
           });
 
@@ -106,13 +101,12 @@ const IletisimBilgileri = () => {
         } else {
           setNoteRet({ retMessage: noteRet.retMessage, retErrorMessage: "" });
           setBorderColor("border-1 border-red-500");
-          degerlendirmeKaydet("murat.hayaloglu", {         
-
+          degerlendirmeKaydet("kemal.yetisir", {
             sectionIletisimBilgileri: {
               note: noteRet.retMessage ? noteRet.retMessage : "",
               sonuc: "ret",
               css: "border-1 border-red-500",
-              anchor: "#section-personel",
+              anchor: "#section-iletisim-bilgileri",
             },
           });
 
@@ -136,8 +130,16 @@ const IletisimBilgileri = () => {
             kararsizErrorMessage: "",
           });
           setBorderColor("border-1 border-orange-300");
-          //setDegerlendirme({degerendirenKullanici:"murat.hayaloğlu",sectionKisiBilgileri:{sonuc:"kararsiz",note:noteKararsiz.kararsizMessage?noteKararsiz.kararsizMessage:""}})
-
+          degerlendirmeKaydet("kemal.yetisir", {
+            sectionIletisimBilgileri: {
+              note: noteKararsiz.kararsizMessage
+                ? noteKararsiz.kararsizMessage
+                : "",
+              sonuc: "kararsiz",
+              css: "border-1 border-orange-500",
+              anchor: "#section-iletisim-bilgileri",
+            },
+          });
           setHovered(false);
         }
 
@@ -150,16 +152,14 @@ const IletisimBilgileri = () => {
   const [hovered, setHovered] = useState(false);
   const [activePopover, setActivePopover] = useState<string | null>(null);
 
-
-   const handleMouseEnter = () => setHovered(true);
+  const handleMouseEnter = () => setHovered(true);
   const handleMouseLeave = () => {
     if (!activePopover) {
       setHovered(false);
     }
   };
 
-
-   const handleOpenChange = (open: boolean, id: string) => {
+  const handleOpenChange = (open: boolean, id: string) => {
     if (open) {
       setActivePopover(id);
     } else {
@@ -169,7 +169,6 @@ const IletisimBilgileri = () => {
       }
     }
   };
-
 
   return (
     <Card className={`${borderColor}`}>
@@ -181,8 +180,7 @@ const IletisimBilgileri = () => {
         >
           İletişim Bilgileri
           {hovered && (
-            
-             <div
+            <div
               className={`flex gap-5 transition-opacity duration-200 ${
                 hovered ? "opacity-100" : "opacity-0"
               }`}
@@ -322,7 +320,6 @@ const IletisimBilgileri = () => {
                 </PopoverContent>
               </Popover>
             </div>
-           
           )}
         </CardTitle>
         <div className="flex items-center gap-2">

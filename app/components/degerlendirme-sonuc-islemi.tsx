@@ -133,10 +133,8 @@ export function DegerlendirmeSonucIslemi() {
             </div>
 
             <div className="flex justify-end space-x-2">
-              <Button className="cursor-pointer" variant="outline">
-                İşlemi Kaydet 
-              </Button>
-              <Button onClick={() => {}} variant="destructive" 
+              
+              <Button onClick={() => {}} variant="default" 
               className={
                 `
                 ${selected==="option1"&&"bg-green-400 text-white"}
@@ -146,7 +144,7 @@ export function DegerlendirmeSonucIslemi() {
                 `
                 }>
                 
-                {yapilanIslem} işlemini kaydet.
+                {yapilanIslem} için amire gönder.
               </Button>
             </div>
           </>

@@ -1,13 +1,9 @@
 "use client";
 
-
-
 import { Clock, CornerUpRight } from "lucide-react";
-
 
 import { SettingsSidebar } from "@/app/components/uzmandegerlendirme/settings-sidebar";
 
-import { DegerlendirmeSonucIslemi } from "@/app/components/uzmandegerlendirme/degerlendirme-sonuc-islemi";
 import { PersonalInfoCard } from "@/app/components/uzmandegerlendirme/personal-info-card";
 import { Button } from "@/components/ui/button";
 
@@ -23,17 +19,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import Link from "next/link";
 
-
-
-
-const UzmanBasvuruDegerlendirme = () => {
-  
-
+const UzmanBasvuruDegerlendirme = ({basvuruNo,kullanici}:{basvuruNo:string,kullanici:string}) => {
   return (
-   
-      
-    
     <div className="container mx-auto ">
       <div className="flex flex-col space-y-4 p-4 md:p-8 ">
         <div className="flex items-center justify-between">
@@ -53,13 +42,8 @@ const UzmanBasvuruDegerlendirme = () => {
               </PopoverTrigger>
 
               <PopoverContent>
-                
                 <div className="flex justify-between items-center mt-2 w-full">
-                  <Button
-                   
-                    className="cursor-pointer w-full"
-                    variant="default"
-                  >
+                  <Button className="cursor-pointer w-full" variant="default">
                     <CornerUpRight />
                     Tamam
                   </Button>
@@ -98,16 +82,18 @@ const UzmanBasvuruDegerlendirme = () => {
             <div id="section-belgeler">
               <Belgeler />
             </div>
-
-            <div id="section-degerlendirme-sonuc-islemi">
-              <DegerlendirmeSonucIslemi />
+            <div id="section-degerlendirme-sonuc-islemi" className="w-full flex items-center justify-end">
+              <Link href={`/dashboard/degerlendirme/form/${basvuruNo}`}> 
+              <Button >
+                
+                Değerlendirmeyi Kaydet</Button>
+              </Link>
+             
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-  
   );
 };
 
