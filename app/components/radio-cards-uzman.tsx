@@ -1,5 +1,5 @@
 "use client";
-import { useDegerlendirmeStore } from "@/app/store/store";
+
 
 import type React from "react";
 
@@ -33,14 +33,9 @@ export default function RadioCardsUzman({
   uzmanislistesi: Application[];
 }) {
 
-  useEffect(() => {
-    const veri = useDegerlendirmeStore.getState().degerlendirmeler[0].sectionKisiBilgileri.sonuc
-    setGelenVeri(veri!)
+ 
   
-    
-  }, [])
-  
-  const [gelenVeri,setGelenVeri] = useState("")
+ 
 
 
   
@@ -80,7 +75,7 @@ export default function RadioCardsUzman({
   return (
     <div className="w-full flex flex-col gap-5 ">
       <h2 className="text-lg font-bold mb-3 text-center">
-        Uzman İş Listesi - {gelenVeri} -{" "}
+        Uzman İş Listesi 
       
       </h2>
 

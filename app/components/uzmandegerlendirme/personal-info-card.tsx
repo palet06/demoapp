@@ -78,8 +78,7 @@ export function PersonalInfoCard() {
           });
 
           setBorderColor("border-1 border-green-500");
-          degerlendirmeKaydet("murat.hayaloglu",{
-            
+          degerlendirmeKaydet("murat.hayaloglu", {
             sectionKisiBilgileri: {
               note: noteOnay.onayMessage ? noteOnay.onayMessage : "",
               sonuc: "onay",
@@ -102,17 +101,15 @@ export function PersonalInfoCard() {
         } else {
           setNoteRet({ retMessage: noteRet.retMessage, retErrorMessage: "" });
           setBorderColor("border-1 border-red-500");
-          degerlendirmeKaydet("murat.hayaloglu",{
-            degerlendirenKullanici:"",
-            
+          degerlendirmeKaydet("murat.hayaloglu", {
+           
+
             sectionKisiBilgileri: {
               note: noteRet.retMessage ? noteRet.retMessage : "",
               sonuc: "ret",
-              css:"border-1 border-red-500" ,
+              css: "border-1 border-red-500",
               anchor: "#section-personel",
             },
-            
-           
           });
 
           setHovered(false);
@@ -553,7 +550,19 @@ export function PersonalInfoCard() {
                   >
                     12345678941
                   </TableCell>
+                 
                 </TableRow>
+
+                <TableRow >
+                  <TableCell colSpan={4} className="font-medium py-2 px-3 border bg-secondary">
+
+                   <Button variant="outline" >
+                    NVİ Kayıt Sorgula
+                  </Button>
+                  </TableCell>
+                </TableRow>
+                
+                
               </TableBody>
             </Table>
           </div>
