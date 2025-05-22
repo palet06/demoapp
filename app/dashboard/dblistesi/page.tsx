@@ -2,16 +2,15 @@
 
 import { useDegerlendirmeStore } from "@/app/store/store";
 
-import { DegerlendirmeSonucIslemi } from "@/app/components/degerlendirme-sonuc-islemi";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
-const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
+const DbListesi = () => {
   const uzmanDegerlendirmeBilgileri = useDegerlendirmeStore
     .getState()
     .degerlendirmeler.find(
-      (uzman) => uzman.degerlendirenKullanici === kullanici
+      (uzman) => uzman.degerlendirenKullanici === "kemal.yetisir"
     );
   return (
     <>
@@ -31,6 +30,31 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <tbody>
+
+                  <tr>
+                    <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
+                      İşlem Yapan Uzman
+                    </td>
+                    <td className="border px-4 py-2">Kemal Yetişir</td>
+                  </tr>
+                  <tr>
+                    <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
+                     Değerlendirme Sonucu
+                    </td>
+                    <td className="border px-4 py-2"><span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span></td>
+                  </tr>
+                  <tr>
+                    <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
+                    Onay Veren Müdür
+                    </td>
+                    <td className="border px-4 py-2">Metin Kırışak</td>
+                  </tr>
+                   <tr>
+                    <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
+                     Değerlendirme Notu
+                    </td>
+                    <td className="border px-4 py-2">Çalışma izni iş sözleşmesine uygun düzenlenmiştir. (31-10-2024'e kadar) Takdirlerinize arz ederim.</td>
+                  </tr>
                   <tr>
                     <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
                       İzin Başlangıç Tarihi
@@ -217,7 +241,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                       </span>
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span>-</span>
+                      <span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span>
                     </td>
                     <td className="border px-2 py-2 text-center">
                       <span>-</span>
@@ -288,8 +312,8 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                         {uzmanDegerlendirmeBilgileri?.sectionIletisimBilgileri.sonuc.toUpperCase()}
                       </span>
                     </td>
-                    <td className="border px-2 py-2 text-center">
-                      <span>-</span>
+                   <td className="border px-2 py-2 text-center">
+                      <span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span>
                     </td>
                     <td className="border px-2 py-2 text-center">
                       <span>-</span>
@@ -361,7 +385,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                       </span>
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span>-</span>
+                      <span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span>
                     </td>
                     <td className="border px-2 py-2 text-center">
                       <span>-</span>
@@ -433,7 +457,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                       </span>
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span>-</span>
+                      <span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span>
                     </td>
                     <td className="border px-2 py-2 text-center">
                       <span>-</span>
@@ -444,6 +468,8 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                     <td className="border px-2 py-2 text-sm">
                       {uzmanDegerlendirmeBilgileri?.sectionEgitimBilgileri
                         .note ? (
+                            <div className="flex flex-col items-start justify-between gap-2">
+                            
                         <p className="text-xs">
                           <span className="font-medium">
                             {
@@ -456,6 +482,12 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                               .note
                           }
                         </p>
+                        <p className="text-xs">
+                            <span className="font-medium">metin.kirisak: </span>
+                            Denklik belgesinin olmaması izin çıkmasına engel değil
+
+                        </p>
+                        </div>
                       ) : (
                         ""
                       )}
@@ -503,7 +535,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                       </span>
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span>-</span>
+                      <span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span>
                     </td>
                     <td className="border px-2 py-2 text-center">
                       <span>-</span>
@@ -573,7 +605,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                       </span>
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span>-</span>
+                      <span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span>
                     </td>
                     <td className="border px-2 py-2 text-center">
                       <span>-</span>
@@ -640,7 +672,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                       </span>
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span>-</span>
+                      <span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span>
                     </td>
                     <td className="border px-2 py-2 text-center">
                       <span>-</span>
@@ -683,7 +715,18 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                   </tr>
                 </tbody>
               </table>
-              <DegerlendirmeSonucIslemi />
+              {/* <DegerlendirmeSonucIslemi /> */}
+            </div>
+          <div  className="w-full flex items-center justify-end pt-3 gap-3">
+              
+              <Button > Başkan Onayına Gönder
+                
+                </Button>
+              <Button variant="destructive" > Onaylamıyorum
+                
+                </Button>
+              
+             
             </div>
           </div>
         </CardContent>
@@ -692,4 +735,4 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
   );
 };
 
-export default DegerlendirmeFormu;
+export default DbListesi;

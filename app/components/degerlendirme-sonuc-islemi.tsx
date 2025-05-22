@@ -18,6 +18,7 @@ import { RadioGroupItem } from "@radix-ui/react-radio-group";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 type Option = {
   id: string;
@@ -133,8 +134,9 @@ export function DegerlendirmeSonucIslemi() {
             </div>
 
             <div className="flex justify-end space-x-2">
-              
-              <Button onClick={() => {}} variant="default" 
+
+              <Link href="/dashboard/smlistesi">
+              <Button  variant="default" 
               className={
                 `
                 ${selected==="option1"&&"bg-green-400 text-white"}
@@ -146,6 +148,8 @@ export function DegerlendirmeSonucIslemi() {
                 
                 {yapilanIslem} için amire gönder.
               </Button>
+              </Link>
+              
             </div>
           </>
         )}

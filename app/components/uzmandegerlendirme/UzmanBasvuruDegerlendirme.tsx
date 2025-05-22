@@ -83,7 +83,7 @@ const UzmanBasvuruDegerlendirme = ({basvuruNo,kullanici}:{basvuruNo:string,kulla
               <Belgeler />
             </div>
             <div id="section-degerlendirme-sonuc-islemi" className="w-full flex items-center justify-end">
-              <Link href={`/dashboard/degerlendirme/form/${basvuruNo}`}> 
+              <Link href={`/dashboard/degerlendirme/form/${kullanici}`}> 
               <Button >
                 
                 Değerlendirmeyi Kaydet</Button>

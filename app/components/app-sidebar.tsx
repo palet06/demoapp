@@ -90,7 +90,7 @@ const data = {
       items: [
         {
           title: "İş Listesi",
-          url: "#",
+          url: "/dashboard/dblistesi",
         },
         {
           title: "E-İmza Listesi",
