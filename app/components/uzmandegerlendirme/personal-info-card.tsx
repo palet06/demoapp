@@ -78,7 +78,7 @@ export function PersonalInfoCard() {
           });
 
           setBorderColor("border-1 border-green-500");
-          degerlendirmeKaydet("murat.hayaloğlu",{
+          degerlendirmeKaydet("murat.hayaloglu",{
             
             sectionKisiBilgileri: {
               note: noteOnay.onayMessage ? noteOnay.onayMessage : "",
@@ -102,7 +102,8 @@ export function PersonalInfoCard() {
         } else {
           setNoteRet({ retMessage: noteRet.retMessage, retErrorMessage: "" });
           setBorderColor("border-1 border-red-500");
-          degerlendirmeKaydet("murat.hayaloğlu",{
+          degerlendirmeKaydet("murat.hayaloglu",{
+            degerlendirenKullanici:"",
             
             sectionKisiBilgileri: {
               note: noteRet.retMessage ? noteRet.retMessage : "",

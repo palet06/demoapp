@@ -3,7 +3,7 @@ import { useDegerlendirmeStore } from "@/app/store/store";
 
 import type React from "react";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -32,8 +32,18 @@ export default function RadioCardsUzman({
 }: {
   uzmanislistesi: Application[];
 }) {
-  const ka = useDegerlendirmeStore.getState().degerlendirmeler.find((a)=>a.degerlendirenKullanici==="murat.hayaloğlu");
-  console.log(ka)
+
+  useEffect(() => {
+    const veri = useDegerlendirmeStore.getState().degerlendirmeler[0].sectionKisiBilgileri.sonuc
+    setGelenVeri(veri!)
+  
+    
+  }, [])
+  
+  const [gelenVeri,setGelenVeri] = useState("")
+
+
+  
   const [selected, setSelected] = useState<string>("option1");
 
   const options: Option[] = [
@@ -70,8 +80,8 @@ export default function RadioCardsUzman({
   return (
     <div className="w-full flex flex-col gap-5 ">
       <h2 className="text-lg font-bold mb-3 text-center">
-        Uzman İş Listesi - {ka?.degerlendirenKullanici} -{" "}
-        {ka?.sectionKisiBilgileri.sonuc} - {ka?.sectionKisiBilgileri.note}
+        Uzman İş Listesi - {gelenVeri} -{" "}
+      
       </h2>
 
       <RadioGroup
