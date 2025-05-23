@@ -705,10 +705,12 @@ const SmListesi = () => {
               {/* <DegerlendirmeSonucIslemi /> */}
             </div>
           <div  className="w-full flex items-center justify-end pt-3 gap-3">
-              
+              <Link href="/dashboard/dblistesi">
+
               <Button > Başkan Onayına Gönder
                 
                 </Button>
+              </Link>
               <Button variant="destructive" > Onaylamıyorum
                 
                 </Button>

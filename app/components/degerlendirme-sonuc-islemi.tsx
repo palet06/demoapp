@@ -64,9 +64,9 @@ export function DegerlendirmeSonucIslemi() {
   return (
     <Card className="border border-blue-600">
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="text-xl font-bold flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 h-[15px]">
+        {/* <CardTitle className="text-xl font-bold flex items-center justify-center gap-2 cursor-pointer hover:text-blue-600 h-[15px]">
           Değerlendirme Sonucu
-        </CardTitle>
+        </CardTitle> */}
         <div className="flex items-center gap-2"></div>
       </CardHeader>
       <CardContent className="space-y-4 ">
@@ -125,7 +125,7 @@ export function DegerlendirmeSonucIslemi() {
                 htmlFor="confirm"
                 className="text-sm text-left font-medium pl-2 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                {yapilanIslem} İşlemine dair açıklamanızı yazın.
+                {yapilanIslem} İşlemine dair açıklamanızı yazın. Bu kısıma e-İzindeki "başvuru değerlendir" sekmesinde {yapilanIslem} butonuna tıklandığında açılan sayfa entegre edilecek.
               </label>
               <Textarea
                 onChange={(e) => setIslemNotu(e.target.value)}

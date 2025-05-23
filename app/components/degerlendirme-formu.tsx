@@ -23,7 +23,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
         </CardHeader>
         <CardContent className="p-0">
           {/* Uzman Özet */}
-          <div className="p-4 border-b">
+          {/* <div className="p-4 border-b">
             <h3 className="font-semibold text-lg border-b pb-2 mb-4">
               Başvuru Değerlendirme Bilgileri
             </h3>
@@ -102,7 +102,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                 </tbody>
               </table>
             </div>
-          </div>
+          </div> */}
           {/* General Bilgiler */}
           <div className="p-4 border-b">
             <h3 className="font-semibold text-lg border-b pb-2 mb-4">
