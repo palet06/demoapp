@@ -31,6 +31,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import Link from "next/link";
+import PdfGosterici from "./pdfGosterici";
 
 const Belgeler = () => {
   const degerlendirmeKaydet = useDegerlendirmeStore(
@@ -347,13 +348,8 @@ const Belgeler = () => {
                 <TableRow>
                   <TableCell className="py-2 px-3 border border-l border-r-white whitespace-normal w-1/4">
                     <div className="flex items-center gap-2  ">
-                      <Link
-                        href={"/3547896_basvuru_dilekcesi.pdf"}
-                        target="_blank"
-                        className="text-blue-600 hover:text-blue-600/65"
-                      >
-                        Başvuru Dilekçesi
-                      </Link>
+                      <PdfGosterici pdfUrl="/3547896_basvuru_dilekcesi.pdf" label="Başvuru Dilekçesi"/> <p className="text-red-600">Shift + Click</p>
+                      
                     </div>
                   </TableCell>
 
@@ -401,13 +397,8 @@ const Belgeler = () => {
                 <TableRow>
                   <TableCell className="py-2 px-3 border border-l border-r-white whitespace-normal w-1/4">
                     <div className="flex items-center gap-2  ">
-                      <Link
-                        href={"/3547896_diploma.pdf"}
-                        target="_blank"
-                        className="text-blue-600 hover:text-blue-600/65"
-                      >
-                        Diploma
-                      </Link>
+                      <PdfGosterici pdfUrl="/3547896_diploma.pdf" label="Diploma"/> <p className="text-red-600">Shift + Click</p>
+                     
                     </div>
                   </TableCell>
 

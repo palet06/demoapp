@@ -2,7 +2,6 @@
 
 import { useDegerlendirmeStore } from "@/app/store/store";
 
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
@@ -31,7 +30,6 @@ const SmListesi = () => {
             <div className="overflow-x-auto">
               <table className="w-full border-collapse">
                 <tbody>
-
                   <tr>
                     <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
                       İşlem Yapan Uzman
@@ -40,15 +38,22 @@ const SmListesi = () => {
                   </tr>
                   <tr>
                     <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
-                     Değerlendirme Sonucu
+                      Değerlendirme Sonucu
                     </td>
-                    <td className="border px-4 py-2"><span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">ONAY</span></td>
+                    <td className="border px-4 py-2">
+                      <span className="bg-green-100 text-green-800  px-2 py-1 rounded text-xs">
+                        ONAY
+                      </span>
+                    </td>
                   </tr>
-                   <tr>
+                  <tr>
                     <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
-                     Değerlendirme Notu
+                      Değerlendirme Notu
                     </td>
-                    <td className="border px-4 py-2">Çalışma izni iş sözleşmesine uygun düzenlenmiştir. (31-10-2024'e kadar) Takdirlerinize arz ederim.</td>
+                    <td className="border px-4 py-2">
+                      Çalışma izni iş sözleşmesine uygun düzenlenmiştir.
+                      (31-10-2024'e kadar) Takdirlerinize arz ederim.
+                    </td>
                   </tr>
                   <tr>
                     <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
@@ -327,8 +332,8 @@ const SmListesi = () => {
                             :{" "}
                           </span>
                           {
-                            uzmanDegerlendirmeBilgileri?.sectionIletisimBilgileri
-                              .note
+                            uzmanDegerlendirmeBilgileri
+                              ?.sectionIletisimBilgileri.note
                           }
                         </p>
                       ) : (
@@ -399,8 +404,8 @@ const SmListesi = () => {
                             :{" "}
                           </span>
                           {
-                            uzmanDegerlendirmeBilgileri?.sectionPasaportBilgileri
-                              .note
+                            uzmanDegerlendirmeBilgileri
+                              ?.sectionPasaportBilgileri.note
                           }
                         </p>
                       ) : (
@@ -501,7 +506,8 @@ const SmListesi = () => {
                       Görev Bilgileri
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span className={`${
+                      <span
+                        className={`${
                           uzmanDegerlendirmeBilgileri?.sectionGorevBilgileri.sonuc.toUpperCase() ===
                             "RET" && "bg-red-100 text-red-800"
                         } 
@@ -517,7 +523,8 @@ const SmListesi = () => {
                          }
                         
                         
-                        px-2 py-1 rounded text-xs`}>
+                        px-2 py-1 rounded text-xs`}
+                      >
                         {uzmanDegerlendirmeBilgileri?.sectionGorevBilgileri.sonuc.toUpperCase()}
                       </span>
                     </td>
@@ -571,7 +578,8 @@ const SmListesi = () => {
                       İşveren/Kurum Bilgileri
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span className={`${
+                      <span
+                        className={`${
                           uzmanDegerlendirmeBilgileri?.sectionIsverenBilgileri.sonuc.toUpperCase() ===
                             "RET" && "bg-red-100 text-red-800"
                         } 
@@ -587,7 +595,8 @@ const SmListesi = () => {
                          }
                         
                         
-                        px-2 py-1 rounded text-xs`}>
+                        px-2 py-1 rounded text-xs`}
+                      >
                         {uzmanDegerlendirmeBilgileri?.sectionIsverenBilgileri.sonuc.toUpperCase()}
                       </span>
                     </td>
@@ -611,7 +620,8 @@ const SmListesi = () => {
                             :{" "}
                           </span>
                           {
-                            uzmanDegerlendirmeBilgileri?.sectionIsverenBilgileri.note
+                            uzmanDegerlendirmeBilgileri?.sectionIsverenBilgileri
+                              .note
                           }
                         </p>
                       ) : (
@@ -638,7 +648,8 @@ const SmListesi = () => {
                       Ek Bilgi ve Belgeler
                     </td>
                     <td className="border px-2 py-2 text-center">
-                      <span className={`${
+                      <span
+                        className={`${
                           uzmanDegerlendirmeBilgileri?.sectionBelgeBilgileri.sonuc.toUpperCase() ===
                             "RET" && "bg-red-100 text-red-800"
                         } 
@@ -654,7 +665,8 @@ const SmListesi = () => {
                          }
                         
                         
-                        px-2 py-1 rounded text-xs`}>
+                        px-2 py-1 rounded text-xs`}
+                      >
                         {uzmanDegerlendirmeBilgileri?.sectionBelgeBilgileri.sonuc.toUpperCase()}
                       </span>
                     </td>
@@ -668,7 +680,7 @@ const SmListesi = () => {
                       <span>-</span>
                     </td>
                     <td className="border px-2 py-2 text-sm">
-                       {uzmanDegerlendirmeBilgileri?.sectionBelgeBilgileri
+                      {uzmanDegerlendirmeBilgileri?.sectionBelgeBilgileri
                         .note ? (
                         <p className="text-xs">
                           <span className="font-medium">
@@ -678,7 +690,8 @@ const SmListesi = () => {
                             :{" "}
                           </span>
                           {
-                            uzmanDegerlendirmeBilgileri?.sectionBelgeBilgileri.note
+                            uzmanDegerlendirmeBilgileri?.sectionBelgeBilgileri
+                              .note
                           }
                         </p>
                       ) : (
@@ -704,18 +717,11 @@ const SmListesi = () => {
               </table>
               {/* <DegerlendirmeSonucIslemi /> */}
             </div>
-          <div  className="w-full flex items-center justify-end pt-3 gap-3">
+            <div className="w-full flex items-center justify-end pt-3 gap-3">
               <Link href="/dashboard/dblistesi">
-
-              <Button > Başkan Onayına Gönder
-                
-                </Button>
+                <Button> Başkan Onayına Gönder</Button>
               </Link>
-              <Button variant="destructive" > Onaylamıyorum
-                
-                </Button>
-              
-             
+              <Button variant="destructive"> Onaylamıyorum</Button>
             </div>
           </div>
         </CardContent>

@@ -247,7 +247,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                     <td className="border px-2 py-2 text-center">
                       <Link
                         href={`/dashboard/degerlendirme/3547896${uzmanDegerlendirmeBilgileri?.sectionKisiBilgileri.anchor}`}
-                        target="_blank"
+                        target="_self"
                       >
                         <Button
                           variant="link"
@@ -319,7 +319,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                     <td className="border px-2 py-2 text-center">
                       <Link
                         href={`/dashboard/degerlendirme/3547896${uzmanDegerlendirmeBilgileri?.sectionIletisimBilgileri.anchor}`}
-                        target="_blank"
+                        target="_self"
                       >
                         <Button
                           variant="link"
@@ -391,7 +391,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                     <td className="border px-2 py-2 text-center">
                       <Link
                         href={`/dashboard/degerlendirme/3547896${uzmanDegerlendirmeBilgileri?.sectionPasaportBilgileri.anchor}`}
-                        target="_blank"
+                        target="_self"
                       >
                         <Button
                           variant="link"
@@ -463,7 +463,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                     <td className="border px-2 py-2 text-center">
                       <Link
                         href={`/dashboard/degerlendirme/3547896${uzmanDegerlendirmeBilgileri?.sectionEgitimBilgileri.anchor}`}
-                        target="_blank"
+                        target="_self"
                       >
                         <Button
                           variant="link"
@@ -533,7 +533,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                     <td className="border px-2 py-2 text-center">
                       <Link
                         href={`/dashboard/degerlendirme/3547896${uzmanDegerlendirmeBilgileri?.sectionGorevBilgileri.anchor}`}
-                        target="_blank"
+                        target="_self"
                       >
                         <Button
                           variant="link"
@@ -602,7 +602,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                     <td className="border px-2 py-2 text-center">
                       <Link
                         href={`/dashboard/degerlendirme/3547896${uzmanDegerlendirmeBilgileri?.sectionIsverenBilgileri.anchor}`}
-                        target="_blank"
+                        target="_self"
                       >
                         <Button
                           variant="link"
@@ -669,7 +669,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
                     <td className="border px-2 py-2 text-center">
                       <Link
                         href={`/dashboard/degerlendirme/3547896${uzmanDegerlendirmeBilgileri?.sectionBelgeBilgileri.anchor}`}
-                        target="_blank"
+                        target="_self"
                       >
                         <Button
                           variant="link"

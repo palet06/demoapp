@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { useDegerlendirmeStore } from "@/app/store/store";
@@ -746,7 +747,10 @@ const DbListesi = () => {
             </div>
             <div className="w-full flex items-center justify-end pt-3 gap-3">
               <Button>Makama Gönderr</Button>
-              <Button className="bg-green-500 text-white hover:bg-green-400"> E-İmza Onay Listesine Ekle</Button>
+              <Button className="bg-green-500 text-white hover:bg-green-400">
+                {" "}
+                E-İmza Onay Listesine Ekle
+              </Button>
               <Button variant="destructive"> Onaylamıyorum</Button>
             </div>
           </div>
