@@ -37,7 +37,7 @@ export default function PdfGosterici({ pdfUrl,label }: { pdfUrl: string,label:st
 
         <SheetContent side="left" className="!min-w-[650px] ">
           
-            <SheetTitle className="">Dosya Görüntüle</SheetTitle>
+            <SheetTitle className="w-full flex justify-center text-primary">{label} gösteriliyor.</SheetTitle>
 
             <div className="h-full !w-[40rem]">
               <iframe

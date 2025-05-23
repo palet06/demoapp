@@ -41,6 +41,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import PdfGosterici from "./pdfGosterici";
 
 const EgitimBilgileri = () => {
   const degerlendirmeKaydet = useDegerlendirmeStore(
@@ -510,15 +511,9 @@ const EgitimBilgileri = () => {
 
                   <TableCell
                     colSpan={3}
-                    className="py-2 px-3 border whitespace-normal w-1/4"
+                    className="py-2 px-3 border  w-1/4 "
                   >
-                    <Link
-                      href={"/3547896_diploma.pdf"}
-                      target="_blank"
-                      className="text-blue-600 hover:text-blue-600/65"
-                    >
-                      Diploma
-                    </Link>
+                   <PdfGosterici pdfUrl="/3547896_diploma.pdf" label="Diploma"/> Shift + Click 
                   </TableCell>
                 </TableRow>
               </TableBody>

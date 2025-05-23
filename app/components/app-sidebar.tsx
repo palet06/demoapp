@@ -46,22 +46,7 @@ const data = {
           title: "Uzman İş Listesi",
           url: "/dashboard/uzmanislistesi",
         },
-        {
-          title: "Onaylanmayan İşlemler",
-          url: "#",
-        },
-        {
-          title: "Güncelleme Takip",
-          url: "#",
-        },
-        {
-          title: "Dış Kurum Görüş Takip",
-          url: "#",
-        },
-        {
-          title: "Müdür Onayında Bekleyenler",
-          url: "#",
-        },
+        
       ],
     },
     {
@@ -73,14 +58,7 @@ const data = {
           title: "Onay/Ret Bekleyen İşlemler",
           url: "/dashboard/smlistesi",
         },
-        {
-          title: "Güncelleme Onay Bekleyen",
-          url: "#",
-        },
-        {
-          title: "Başkanda Onaayında Bekleyenler",
-          url: "#",
-        },
+        
       ],
     },
     {
@@ -92,18 +70,7 @@ const data = {
           title: "İş Listesi",
           url: "/dashboard/dblistesi",
         },
-        {
-          title: "E-İmza Listesi",
-          url: "#",
-        },
-        {
-          title: "Onaylanmayan işlemler",
-          url: "#",
-        },
-        {
-          title: "Makam Onayında Bekleyenler",
-          url: "#",
-        },
+        
       ],
     },
     {

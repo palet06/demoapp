@@ -38,6 +38,7 @@ import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { useState } from "react";
 
 import Link from "next/link";
+import PdfGosterici from "./pdfGosterici";
 
 const PasaportBilgileri = () => {
   const degerlendirmeKaydet = useDegerlendirmeStore(
@@ -411,13 +412,7 @@ const PasaportBilgileri = () => {
                     colSpan={3}
                     className="py-2 px-3 border whitespace-normal w-1/4"
                   >
-                    <Link
-                      href={"/3547896_pasaport.pdf"}
-                      target="_blank"
-                      className="text-blue-600 hover:text-blue-600/65"
-                    >
-                      Pasaport
-                    </Link>
+                    <PdfGosterici pdfUrl="/3547896_pasaport.pdf" label="Pasaport"/> Shift + Click
                   </TableCell>
                 </TableRow>
               </TableBody>
