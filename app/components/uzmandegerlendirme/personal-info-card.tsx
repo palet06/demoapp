@@ -368,7 +368,7 @@ export function PersonalInfoCard() {
                     colSpan={1}
                     className="py-2 px-3 border whitespace-normal"
                   >
-                    Murat
+                    ELAMAN
                   </TableCell>
                   <TableCell
                     colSpan={1}
@@ -380,7 +380,7 @@ export function PersonalInfoCard() {
                     colSpan={1}
                     className="py-2 px-3 border whitespace-normal"
                   >
-                    Hayaloğlu
+                    ISHENGAZIEV
                   </TableCell>
                 </TableRow>
                 <TableRow>
@@ -394,7 +394,7 @@ export function PersonalInfoCard() {
                     colSpan={1}
                     className="py-2 px-3 border whitespace-normal"
                   >
-                    Ali Haydar
+                   ILICHBEK
                   </TableCell>
                   <TableCell
                     colSpan={1}
@@ -406,7 +406,7 @@ export function PersonalInfoCard() {
                     colSpan={1}
                     className="py-2 px-3 border whitespace-normal"
                   >
-                    Leyla
+                    ELMIRA
                   </TableCell>
                 </TableRow>
                 <TableRow>
