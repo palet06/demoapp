@@ -37,7 +37,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { useState } from "react";
 
-import Link from "next/link";
+
 import PdfGosterici from "./pdfGosterici";
 
 const PasaportBilgileri = () => {
