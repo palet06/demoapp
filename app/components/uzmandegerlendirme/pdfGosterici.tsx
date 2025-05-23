@@ -35,14 +35,14 @@ export default function PdfGosterici({ pdfUrl,label }: { pdfUrl: string,label:st
       <Sheet open={open} onOpenChange={setOpen}>
         
 
-        <SheetContent side="left" className="!min-w-[650px] ">
+        <SheetContent side="left" className="!min-w-[60rem] ">
           
             <SheetTitle className="w-full flex justify-center text-primary">{label} gösteriliyor.</SheetTitle>
 
-            <div className="h-full !w-[40rem]">
+            <div className="h-full !w-[60rem]">
               <iframe
                 src={pdfUrl}
-                className="!w-[40rem] h-full"
+                className="!w-[60rem] h-full"
                 title="PDF Viewer"
               ></iframe>
             </div>
