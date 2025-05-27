@@ -31,7 +31,7 @@ export default function DynamicBreadcrumb() {
         {pathLinks.map((item, index) => (
           <BreadcrumbItem key={item.href}>
             <BreadcrumbLink asChild>
-              <Link href={item.href}>{item.name}</Link>
+              <Link href={item.href}>{item.name==="Degerlendirme"?"Değerlendirme Ekranı":item.name==="Uzmanislistesi"?"Uzman İş Listesi":item.name==="Smlistesi"?"Şube Müdürü Onay/Ret Bekleyen İşlemler":item.name==="Dblistesi"?"Daire Başkanı İş Listesi":item.name}</Link>
             </BreadcrumbLink>
             {index < pathLinks.length - 1 && <BreadcrumbSeparator />}
           </BreadcrumbItem>

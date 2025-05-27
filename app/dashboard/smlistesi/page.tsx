@@ -14,16 +14,19 @@ const SmListesi = () => {
     );
   return (
     <>
+
       <Card className="w-full max-w-6xl mx-auto">
         <CardHeader className="border-b pb-3">
           <CardTitle className="text-center text-xl font-bold">
             DEĞERLENDİRME FORMU
+            <h1 className="text-sm font-normal text-red-500">Burası <span className="font-semibold">"Şube Müdürü İş Listesi -> Onay/Ret Bekleyen İşlemler"</span>  menüsü. </h1>
+              
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
           {/* Uzman Özet */}
           <div className="p-4 border-b">
-            <h3 className="font-semibold text-lg border-b pb-2 mb-4">
+            <h3 className="font-bold text-lg border-b pb-2 mb-4">
               Başvuru Değerlendirme Bilgileri
             </h3>
 
@@ -129,7 +132,7 @@ const SmListesi = () => {
           </div>
           {/* General Bilgiler */}
           <div className="p-4 border-b">
-            <h3 className="font-semibold text-lg border-b pb-2 mb-4">
+            <h3 className="font-bold text-lg border-b pb-2 mb-4">
               Genel Bilgiler
             </h3>
 
@@ -179,7 +182,7 @@ const SmListesi = () => {
 
           {/* işlemler */}
           <div className="p-4">
-            <h3 className="font-semibold text-lg border-b pb-2 mb-4">
+            <h3 className="font-bold text-lg border-b pb-2 mb-4">
               Değerlendirme Aşaması
             </h3>
 

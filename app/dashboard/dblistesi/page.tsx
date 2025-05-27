@@ -19,12 +19,13 @@ const DbListesi = () => {
         <CardHeader className="border-b pb-3">
           <CardTitle className="text-center text-xl font-bold">
             DEĞERLENDİRME FORMU
+             <h1 className="text-sm font-normal text-red-500">Burası <span className="font-semibold">"Daire Başkanı -> İş Listesi"</span>  menüsü. </h1>
           </CardTitle>
         </CardHeader>
         <CardContent className="p-0">
           {/* Uzman Özet */}
           <div className="p-4 border-b">
-            <h3 className="font-semibold text-lg border-b pb-2 mb-4">
+            <h3 className="font-bold text-lg border-b pb-2 mb-4">
               Başvuru Değerlendirme Bilgileri
             </h3>
 
@@ -49,12 +50,6 @@ const DbListesi = () => {
                   </tr>
                   <tr>
                     <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
-                      Onay Veren Müdür
-                    </td>
-                    <td className="border px-4 py-2">Metin Kırışak</td>
-                  </tr>
-                  <tr>
-                    <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
                       Değerlendirme Notu
                     </td>
                     <td className="border px-4 py-2">
@@ -62,6 +57,13 @@ const DbListesi = () => {
                       (31-10-2024'e kadar) Takdirlerinize arz ederim.
                     </td>
                   </tr>
+                  <tr>
+                    <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
+                      Onay Veren Müdür
+                    </td>
+                    <td className="border px-4 py-2">Metin Kırışak</td>
+                  </tr>
+                  
                   <tr>
                     <td className="border px-4 py-2 font-medium w-1/3 bg-gray-50">
                       İzin Başlangıç Tarihi
@@ -136,7 +138,7 @@ const DbListesi = () => {
           </div>
           {/* General Bilgiler */}
           <div className="p-4 border-b">
-            <h3 className="font-semibold text-lg border-b pb-2 mb-4">
+            <h3 className="font-bold text-lg border-b pb-2 mb-4">
               Genel Bilgiler
             </h3>
 
@@ -186,7 +188,7 @@ const DbListesi = () => {
 
           {/* işlemler */}
           <div className="p-4">
-            <h3 className="font-semibold text-lg border-b pb-2 mb-4">
+            <h3 className="font-bold text-lg border-b pb-2 mb-4">
               Değerlendirme Aşaması
             </h3>
 

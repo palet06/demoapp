@@ -105,7 +105,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
           </div> */}
           {/* General Bilgiler */}
           <div className="p-4 border-b">
-            <h3 className="font-semibold text-lg border-b pb-2 mb-4">
+            <h3 className="font-bold text-lg border-b pb-2 mb-4">
               Genel Bilgiler
             </h3>
 
@@ -155,7 +155,7 @@ const DegerlendirmeFormu = ({ kullanici }: { kullanici: string }) => {
 
           {/* işlemler */}
           <div className="p-4">
-            <h3 className="font-semibold text-lg border-b pb-2 mb-4">
+            <h3 className="font-bold text-lg border-b pb-2 mb-4">
               Değerlendirme Aşaması
             </h3>
 
