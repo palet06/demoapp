@@ -38,6 +38,9 @@ type NoteKararsizType = {
 };
 
 export function PersonalInfoCard() {
+  const [expand, setExpand] = useState(false);
+  const [expand2, setExpand2] = useState(false);
+  const [expand3, setExpand3] = useState(false);
   const degerlendirmeKaydet = useDegerlendirmeStore(
     (state) => state.setDegerlendirme
   );
@@ -341,7 +344,9 @@ export function PersonalInfoCard() {
           </DropdownMenu>
         </div>
       </CardHeader>
-      <CardContent>
+      <CardContent
+        className={`${expand && "h-full"} animate-accordion-down duration-500 `}
+      >
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex-shrink-0">
             <div className="w-32 h-40 bg-muted rounded-md overflow-hidden">
@@ -354,7 +359,7 @@ export function PersonalInfoCard() {
               />
             </div>
           </div>
-          <div className="flex-grow">
+          <div className="flex-grow h-full">
             <Table>
               <TableBody>
                 <TableRow>
@@ -394,7 +399,7 @@ export function PersonalInfoCard() {
                     colSpan={1}
                     className="py-2 px-3 border whitespace-normal"
                   >
-                   ILICHBEK
+                    ILICHBEK
                   </TableCell>
                   <TableCell
                     colSpan={1}
@@ -561,13 +566,268 @@ export function PersonalInfoCard() {
                 <TableRow>
                   <TableCell
                     colSpan={4}
-                    className="font-medium py-2 px-3 border bg-secondary"
+                    className="font-medium py-2 px-3 border bg-secondary gap-7"
                   >
-                    <Button variant="outline">NVİ Kayıt Sorgula</Button>
+                    <div className="flex w-full justify-between items-center gap-10">
+                      <Button
+                        className="w-52"
+                        onClick={() => setExpand((prev) => !prev)}
+                        variant="outline"
+                      >
+                        {expand ? "Sorguyu Kapat" : "NVİ Kayıt Sorgula"}
+                      </Button>
+                      <Button
+                      
+                        onClick={() => setExpand2((prev) => !prev)}
+                        className="bg-primary hover:bg-primary/50 w-52"
+                      >
+                        {expand2 ? "Sorguyu Kapat" : "NVİ Velayet/Vesayet"}
+                      </Button>
+                      <Button
+                      className="bg-amber-300 hover:bg-amber-300/55 w-52"
+                        onClick={() => setExpand3((prev) => !prev)}
+                        variant="destructive"
+                      >
+                        {expand3 ? "Sorguyu Kapat" : "NVİ İkamet Sorgula"}
+                      </Button>
+                    </div>
                   </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
+            {expand && (
+              <div className="mt-2 flex items-center justify-center   border">
+                <Table>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary w-1/4"
+                      >
+                        <div className="flex items-center gap-2 ">Adı</div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        ELAMAN
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">Soyadı</div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        ISHENGAZIEV
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">Baba Adı</div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        ILICHBEK
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">Ana Adı</div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-red-100"
+                      >
+                        ELMIRAT
+                        <X className="text-red-600" />
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Cinsiyeti
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        Erkek
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Medeni Hali
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-red-100"
+                      >
+                        Bekar
+                        <X className="text-red-600" />
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Doğum Yeri
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        Ankara
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">Uyruk</div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        T.C.
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Doğum Tarihi
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={3}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        26-04-1995 (40 yıl 10 gün önce)
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Yabancı Kimlik Numarası
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={3}
+                        className="py-2 px-3 border whitespace-normal"
+                      ></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Yurtdışı Referans Numarası
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={3}
+                        className="py-2 px-3 border whitespace-normal"
+                      ></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">Eş Adı</div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        yyyyy
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Eş Soyadı
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        hhhh
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Eş Uyruğu
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        T.C.
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="font-medium py-2 px-3 border bg-secondary "
+                      >
+                        <div className="flex items-center gap-2 ">
+                          Eş T.C. Kimlik Numarası
+                        </div>
+                      </TableCell>
+                      <TableCell
+                        colSpan={1}
+                        className="py-2 px-3 border whitespace-normal"
+                      >
+                        12345678941
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </div>
+            )}
+            {expand2 && (
+              <div className="flex items-center justify-center text-xl text-center text-green-500 h-52 border">
+                sorgu vesayet sonucu
+              </div>
+            )}
+            {expand3 && (
+              <div className="flex items-center justify-center text-xl text-center text-green-500 h-52 border">
+                sorgu ikamet sonucu
+              </div>
+            )}
+            <div></div>
           </div>
         </div>
       </CardContent>
