@@ -608,9 +608,10 @@ export function PersonalInfoCard() {
                       </TableCell>
                       <TableCell
                         colSpan={1}
-                        className="py-2 px-3 border whitespace-normal"
+                        className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-green-100"
                       >
                         ELAMAN
+                        <Check className="text-green-600" />
                       </TableCell>
                       <TableCell
                         colSpan={1}
@@ -620,9 +621,10 @@ export function PersonalInfoCard() {
                       </TableCell>
                       <TableCell
                         colSpan={1}
-                        className="py-2 px-3 border whitespace-normal"
+                        className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-green-100"
                       >
                         ISHENGAZIEV
+                        <Check className="text-green-600" />
                       </TableCell>
                     </TableRow>
                     <TableRow>
@@ -634,9 +636,10 @@ export function PersonalInfoCard() {
                       </TableCell>
                       <TableCell
                         colSpan={1}
-                        className="py-2 px-3 border whitespace-normal"
+                        className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-green-100"
                       >
                         ILICHBEK
+                        <Check className="text-green-600" />
                       </TableCell>
                       <TableCell
                         colSpan={1}
@@ -663,9 +666,10 @@ export function PersonalInfoCard() {
                       </TableCell>
                       <TableCell
                         colSpan={1}
-                        className="py-2 px-3 border whitespace-normal"
+                        className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-green-100"
                       >
                         Erkek
+                        <Check className="text-green-600" />
                       </TableCell>
                       <TableCell
                         colSpan={1}
@@ -694,9 +698,10 @@ export function PersonalInfoCard() {
                       </TableCell>
                       <TableCell
                         colSpan={1}
-                        className="py-2 px-3 border whitespace-normal"
+                        className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-green-100"
                       >
                         Ankara
+                        <Check className="text-green-600" />
                       </TableCell>
                       <TableCell
                         colSpan={1}
@@ -706,9 +711,10 @@ export function PersonalInfoCard() {
                       </TableCell>
                       <TableCell
                         colSpan={1}
-                        className="py-2 px-3 border whitespace-normal"
+                        className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-green-100"
                       >
                         T.C.
+                        <Check className="text-green-600" />
                       </TableCell>
                     </TableRow>
                     <TableRow>
@@ -722,9 +728,10 @@ export function PersonalInfoCard() {
                       </TableCell>
                       <TableCell
                         colSpan={3}
-                        className="py-2 px-3 border whitespace-normal"
+                       className="py-2 px-3 border whitespace-normal flex items-center gap-2 bg-green-100"
                       >
                         26-04-1995 (40 yıl 10 gün önce)
+                        <Check className="text-green-600" />
                       </TableCell>
                     </TableRow>
                     <TableRow>

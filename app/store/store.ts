@@ -63,7 +63,7 @@ export const useDegerlendirmeStore = create<
 
           // Eğer kullanıcı daha önce eklenmemişse, yeni bir kullanıcı ekle
           // Tüm zorunlu alanlar için varsayılan değerler ekleniyor
-          const emptySection: Section = { sonuc: '', note: '', css: '', anchor: '' };
+          const emptySection: Section = { sonuc: 'onay', note: '', css: '', anchor: '' };
           const emptyNihaiKarar: NihaiKarar = { sonuc: '', note: '', css: '' };
           return {
             degerlendirmeler: [

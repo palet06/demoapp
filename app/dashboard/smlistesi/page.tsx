@@ -12,6 +12,7 @@ const SmListesi = () => {
     .degerlendirmeler.find(
       (uzman) => uzman.degerlendirenKullanici === "kemal.yetisir"
     );
+  const { setDegerlendirme} = useDegerlendirmeStore()
   return (
     <>
 
@@ -722,7 +723,7 @@ const SmListesi = () => {
             </div>
             <div className="w-full flex items-center justify-end pt-3 gap-3">
               <Link href="/dashboard/dblistesi">
-                <Button> Başkan Onayına Gönder</Button>
+                <Button  onClick={()=> setDegerlendirme("metin.kirisak",{})} > Başkan Onayına Gönder</Button>
               </Link>
               <Button variant="destructive"> Onaylamıyorum</Button>
             </div>

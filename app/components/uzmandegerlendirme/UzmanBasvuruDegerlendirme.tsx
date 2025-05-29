@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-
+import {useDegerlendirmeStore} from "@/app/store/store"
 import { Clock, CornerUpRight } from "lucide-react";
 
 import { SettingsSidebar } from "@/app/components/uzmandegerlendirme/settings-sidebar";
@@ -23,6 +23,7 @@ import {
 import Link from "next/link";
 
 const UzmanBasvuruDegerlendirme = ({basvuruNo,kullanici}:{basvuruNo:string,kullanici:string}) => {
+  const { setDegerlendirme} = useDegerlendirmeStore()
   return (
     <div className="container mx-auto ">
       <div className="flex flex-col space-y-4 p-4 md:p-8 ">
@@ -85,7 +86,7 @@ const UzmanBasvuruDegerlendirme = ({basvuruNo,kullanici}:{basvuruNo:string,kulla
             </div>
             <div id="section-degerlendirme-sonuc-islemi" className="w-full flex items-center justify-end">
               <Link href={`/dashboard/degerlendirme/form/${kullanici}`}> 
-              <Button >
+              <Button onClick={()=> setDegerlendirme("kemal.yetisir",{})} >
                 
                 Değerlendirmeyi Kaydet</Button>
               </Link>
